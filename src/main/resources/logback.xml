@@ -1,0 +1,37 @@
+<configuration>
+  <property name="LOG_HOME" value="${LOG_HOME:-./logs}" />
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOG_HOME}/app.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_HOME}/old/app-%d{yyyyMM}.log</fileNamePattern>
+      <maxHistory>12</maxHistory>
+    </rollingPolicy>
+
+    <encoder>
+      <pattern>%date [%-36.36thread] %-5level %-36.36logger{32} - %message%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%date [%-36.36thread] %-5level %-36.36logger{32} - %message%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="ASYNCFILE" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="FILE" />
+  </appender>
+
+  <appender name="ASYNCSTDOUT" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="STDOUT" />
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="ASYNCFILE" />
+    <appender-ref ref="ASYNCSTDOUT" />
+  </root>
+
+  <!-- <logger name="lkb.wxserver" level="DEBUG" /> -->
+  <logger name="org.pac4j.play.filters.SecurityFilter" level="WARN" />
+</configuration>
