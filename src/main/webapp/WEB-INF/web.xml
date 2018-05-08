@@ -18,7 +18,7 @@
     </init-param>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>ShoppingMall.AppConfig</param-value>
+      <param-value>ShoppingMall.config.AppConfig</param-value>
     </init-param>
     
     <!-- <multipart-config>

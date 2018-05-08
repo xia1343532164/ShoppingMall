@@ -1,4 +1,4 @@
-package ShoppingMall;
+package ShoppingMall.config;
 
 import javax.sql.DataSource;
 
