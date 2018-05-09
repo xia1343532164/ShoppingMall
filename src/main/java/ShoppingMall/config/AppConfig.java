@@ -15,6 +15,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -62,6 +64,14 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		sf.setDataSource(dataSource);
 		return sf;
 		}
+    
+	@Bean
+	public MultipartResolver multipartResolver(){//多部解析器
+		CommonsMultipartResolver mr = new CommonsMultipartResolver();
+		mr.setMaxUploadSize(10*1024*1024);
+		return mr;
+	}
+	
 	//事务
      @Bean
      public PlatformTransactionManager transactionManager(DataSource dataSource){

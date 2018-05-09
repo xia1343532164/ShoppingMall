@@ -20,12 +20,13 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
           http.authorizeRequests()
           .antMatchers("/admin/**").access(" isFullyAuthenticated() and FuhasRloe('ADMIN')")
           .antMatchers("/assets/**","/login").permitAll()
-          .antMatchers("/register").anonymous()
+          .antMatchers("/register").permitAll()
           .antMatchers("/**").authenticated()
           
           .and()
           .formLogin()
           .loginPage("/login")
+          
           .and()
           .rememberMe()
           .tokenValiditySeconds(7*24*3600)

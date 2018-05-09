@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>unique</title>
 <link type="text/css" href="${contextPath}/assets/css/css.css" rel="stylesheet" />
+<link type="text/css" href="${contextPath}/assets/css/css/app.css" rel="stylesheet">
 <script type="text/javascript" src="${contextPath}/assets/js/jquery.js"></script>
 <script type="text/javascript" src="${contextPath}/assets/js/js.js"></script>
 </head>
@@ -40,24 +42,32 @@
     <li class="regEqBg2">采购商</li>
     <div class="clears"></div>
    </ul><!--regEq/-->
-   <form action="${contextPath}/register" method="post" class="regForm">
+   <form:form action="${contextPath}/register" method="post" class="regForm" commandName="user" >
        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <div class="loginBuyList">
+   
      <label for="username">用户名：</label>
-     <input type="text" id="usernmae" name="username" />
+     <form:input type="text" path="username" />
+     <form:errors path="username" cssClass="field-error"></form:errors>
+    
     </div><!--loginBuyList/-->
     <div class="loginBuyList">
      <label for="email">邮箱：</label>
-     <input type="text" id="email" name="email"/>
+     <form:errors path="email" cssClass="field-error"></form:errors>
+     <form:input type="text" path="email"/>
     </div><!--loginBuyList/-->
     <div class="loginBuyList">
      <label for="phone">手机号码：</label>
-     <input type="text" id="phone" name="phone"/>
+     <form:input type="text" path="phone" />
+     <form:errors path="phone" cssClass="field-error"></form:errors>
     </div><!--loginBuyList/-->
+    
     <div class="loginBuyList">
      <label for="password">设置密码：</label>
-     <input type="password" id="password" name="password"/>
+     <form:input type="password" path="password" />
+     <form:errors path="password" cssClass="field-error"></form:errors>
     </div><!--loginBuyList/-->
+    
     <div class="loginBuyList" style="border:#DEDEDE 1px solid;">
      <label for="password1">确认密码：</label>
      <input type="password" id="password1" name="password1"/>
@@ -66,6 +76,7 @@
     <div class="loginBuyyan">
      <label for="yanzheng">验证码：</label>
      <input type="text" id="yanzheng" />
+    
      <div class="yanzhengma">
       <img src="${contextPath}/assets/images/yanzheng.jpg" width="124" height="52" />
       <span>换一张</span>
@@ -77,7 +88,7 @@
     <div class="regSubs">
      <input type="submit" value=" 注 册 " />
     </div><!--regSub/-->
-   </form><!--/-->
+   </form:form><!--/-->
    
    <form action="#" method="get" class="regForm">
     <div class="loginBuyList">
