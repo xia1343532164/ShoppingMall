@@ -8,8 +8,8 @@
   </select>
   
   <insert id="create" >
-          insert into shoppinguser(id,username,email,phone,password)values
-          (shoppinguser_seq.nextval,#{username},#{email},${phone},${password}) 
+          insert into shoppinguser(id,username,email,phone,password) values
+          (shoppinguser_seq.nextval,#{username},#{email},#{phone},#{password}) 
   </insert>
 
 </mapper>

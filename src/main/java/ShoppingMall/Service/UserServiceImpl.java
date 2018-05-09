@@ -7,6 +7,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import ShoppingMall.Dao.UserDao;
@@ -17,6 +18,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 	@Autowired
 	private UserDao userDao;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user =  userDao.findOneByUsername(username);
@@ -27,9 +30,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 
 	public void create(User user) {
+		   String encode = passwordEncoder.encode(user.getPassword());
+		   System.out.println(encode);
+		   user.setPassword(encode);
+		   System.out.println(user);
            userDao.create(user);		
 	}
-
 }
 class UserDetailsImpl extends org.springframework.security.core.userdetails.User{
 
