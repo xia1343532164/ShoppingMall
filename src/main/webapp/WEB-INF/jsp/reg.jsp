@@ -1,27 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>unique</title>
-<link type="text/css" href="css/css.css" rel="stylesheet" />
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
+<link type="text/css" href="${contextPath}/assets/css/css.css" rel="stylesheet" />
+<script type="text/javascript" src="${contextPath}/assets/js/jquery.js"></script>
+<script type="text/javascript" src="${contextPath}/assets/js/js.js"></script>
 </head>
 
 <body>
  <div class="hrader" id="header">
-  <a href="login.html" style="color:#FD7306;margin-left:20px;">请登录</a> 
-  <a href="reg.html">注册</a>
+  <a href="login.jsp" style="color:#FD7306;margin-left:20px;">请登录</a> 
+  <a href="reg.jsp">注册</a>
   <div class="topNav">
-   <a href="index.html" style="color:#FD7306;">首页</a>
-   <a href="buy.html">买家</a>
-   <a href="sell.html">卖家</a>
-   <a href="vip.html">会员中心</a>
-   <a href="xuanshang.html">悬赏榜</a>
-   <a href="luntan.html" class="luntan">论坛</a>
-   <a href="help.html">帮助</a>
+   <a href="index.jsp" style="color:#FD7306;">首页</a>
+   <a href="buy.jsp">买家</a>
+   <a href="sell.jsp">卖家</a>
+   <a href="vip.jsp">会员中心</a>
+   <a href="xuanshang.jsp">悬赏榜</a>
+   <a href="luntan.jsp" class="luntan">论坛</a>
+   <a href="help.jsp">帮助</a>
    <a href="#">&nbsp;</a>
    <a href="#" class="lan">中文</a>
    <a href="#" class="lan">English</a>
@@ -29,7 +31,7 @@
  </div><!--hrader/-->
  <div class="mainCont">
   <h1 class="logo" style="text-align:left;">
-  <a href="index.html"><img src="images/logo.png" width="304" height="74" /></a>
+  <a href="index.jsp"><img src="${contextPath}/assets/images/logo.png" width="304" height="74" /></a>
   </h1>
   <div class="loginBuy">
   <div class="loginBuyLeft">
@@ -38,38 +40,38 @@
     <li class="regEqBg2">采购商</li>
     <div class="clears"></div>
    </ul><!--regEq/-->
-   <form action="#" method="get" class="regForm">
+   <form action="${contextPath}/register" method="get" class="regForm">
     <div class="loginBuyList">
-     <label for="name">用户名：</label>
-     <input type="text" id="name" />
+     <label for="username">用户名：</label>
+     <input type="text" id="usernmae" />
     </div><!--loginBuyList/-->
     <div class="loginBuyList">
      <label for="email">邮箱：</label>
      <input type="text" id="email" />
     </div><!--loginBuyList/-->
     <div class="loginBuyList">
-     <label for="tel">手机号码：</label>
-     <input type="text" id="tel" />
+     <label for="phone">手机号码：</label>
+     <input type="text" id="phone" />
     </div><!--loginBuyList/-->
     <div class="loginBuyList">
-     <label for="pwd">设置密码：</label>
-     <input type="text" id="pwd" />
+     <label for="password">设置密码：</label>
+     <input type="text" id="password" />
     </div><!--loginBuyList/-->
     <div class="loginBuyList" style="border:#DEDEDE 1px solid;">
-     <label for="pwd1">确认密码：</label>
-     <input type="text" id="pwd1" />
+     <label for="password">确认密码：</label>
+     <input type="text" id="password" />
     </div><!--loginBuyList/-->
     
     <div class="loginBuyyan">
      <label for="yanzheng">验证码：</label>
      <input type="text" id="yanzheng" />
      <div class="yanzhengma">
-      <img src="images/yanzheng.jpg" width="124" height="52" />
+      <img src="${contextPath}/assets/images/yanzheng.jpg" width="124" height="52" />
       <span>换一张</span>
      </div>
     </div><!--loginBuyList/-->
     <div class="falv">
-     <input type="checkbox" /> <span>我已阅读并同意<a href="xieyi.html" target="_blank">《uniqueZi协议》</a></span>
+     <input type="checkbox" /> <span>我已阅读并同意<a href="xieyi.jsp" target="_blank">《uniqueZi协议》</a></span>
     </div><!--falv/-->
     <div class="regSubs">
      <input type="button" value=" 注 册 " />
@@ -102,12 +104,12 @@
      <label for="yanzheng">验证码：</label>
      <input type="text" id="yanzheng" />
      <div class="yanzhengma">
-      <img src="images/yanzheng.jpg" width="124" height="52" />
+      <img src="${contextPath}/assets/images/yanzheng.jpg" width="124" height="52" />
       <span>换一张</span>
      </div>
     </div><!--loginBuyList/-->
     <div class="falv">
-     <input type="checkbox" /> <span>我已阅读并同意<a href="xieyi.html" target="_blank">《uniqueZi协议》</a></span>
+     <input type="checkbox" /> <span>我已阅读并同意<a href="xieyi.jsp" target="_blank">《uniqueZi协议》</a></span>
     </div><!--falv/-->
     <div class="regSubs">
      <input type="button" value=" 注 册 " />
@@ -116,12 +118,12 @@
   </div><!--loginBuyLeft-->
   <div class="loginBuyRight">
    <div class="regDl">
-    <a href="login.html"><img src="images/dl.jpg" width="180" height="60" /></a>
-    <p>已有<a href="login.html">供应商</a>账号点击登录！</p>
+    <a href="login.jsp"><img src="${contextPath}/assets/images/dl.jpg" width="180" height="60" /></a>
+    <p>已有<a href="login.jsp">供应商</a>账号点击登录！</p>
    </div><!--regDl/-->
    <div class="regDl">
-    <a href="login.html"><img src="images/dl.jpg" width="180" height="60" /></a>
-    <p>已有<a href="login.html">采购商</a>账号点击登录！</p>
+    <a href="login.jsp"><img src="${contextPath}/assets/images/dl.jpg" width="180" height="60" /></a>
+    <p>已有<a href="login.jsp">采购商</a>账号点击登录！</p>
    </div><!--regDl/-->
   </div><!--loginBuyRight/-->
   <div class="clears"></div>
@@ -130,7 +132,7 @@
  <div class="footBox">
   <div class="footers">
    <div class="footersLeft">
-    <a href="index.html"><img src="images/ftlogo.jpg" width="240" height="64" /></a>
+    <a href="index.jsp"><img src="${contextPath}/assets/images/ftlogo.jpg" width="240" height="64" /></a>
     <h3 class="ftphone">400 000 0000 </h3>
     <div class="ftKe">
      客服 7x24小时(全年无休)<br />

@@ -3,6 +3,7 @@ package ShoppingMall.config;
 import javax.sql.DataSource;
 
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +24,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 @PropertySource("classpath:jdbc.properties")
 @EnableTransactionManagement
+@MapperScan("ShoppingMall.Dao.mapper")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
 	//”≥…‰jsp

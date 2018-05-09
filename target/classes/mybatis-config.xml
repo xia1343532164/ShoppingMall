@@ -11,6 +11,6 @@
    </settings>
    
    <typeAliases>
-      <package name="ShoppingMall.entity.User"/>
+      <package name="ShoppingMall.entity"/>
    </typeAliases>
 </configuration>

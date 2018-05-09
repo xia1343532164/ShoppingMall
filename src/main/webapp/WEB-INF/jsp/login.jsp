@@ -18,16 +18,16 @@
 <h4 style="color:red;">登录失败，账号或密码错误</h4>
 </c:if>
  <div class="hrader" id="header">
-  <a href="login.html" style="color:#FD7306;margin-left:20px;">请登录</a> 
-  <a href="reg.html">注册</a>
+  <a href="login.jsp" style="color:#FD7306;margin-left:20px;">请登录</a> 
+  <a href="reg.jsp">注册</a>
   <div class="topNav">
-   <a href="index.html" style="color:#FD7306;">首页</a>
-   <a href="buy.html">买家</a>
-   <a href="sell.html">卖家</a>
-   <a href="vip.html">会员中心</a>
-   <a href="xuanshang.html">悬赏榜</a>
-   <a href="luntan.html" class="luntan">论坛</a>
-   <a href="help.html">帮助</a>
+   <a href="index.jsp" style="color:#FD7306;">首页</a>
+   <a href="buy.jsp">买家</a>
+   <a href="sell.jsp">卖家</a>
+   <a href="vip.jsp">会员中心</a>
+   <a href="xuanshang.jsp">悬赏榜</a>
+   <a href="luntan.jsp" class="luntan">论坛</a>
+   <a href="help.jsp">帮助</a>
    <a href="#">&nbsp;</a>
    <a href="#" class="lan">中文</a>
    <a href="#" class="lan">English</a>
@@ -35,20 +35,20 @@
  </div><!--hrader/-->
  <div class="mainCont">
   <h1 class="logo" style="text-align:left;">
-  <a href="index.html"><img src="${contextPath}/assets/images/logo.png" width="304" height="74" /></a>
+  <a href="index.jsp"><img src="${contextPath}/assets/images/logo.png" width="304" height="74" /></a>
   </h1>
   <div class="loginBox">
    <div class="loginLeft">
     <img src="${contextPath}/assets/images/login.jpg" width="567" height="348" />
    </div><!--loginLeft/-->
    <div class="loginRight">
-    <form class="login" action="#" method="get">
+    <form class="login" action="${contextPath}/login" method="POST">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
      <label>邮箱/用户名/已验证手机</label>
-     <input type="text" class="username" />
+     <input type="text" class="username" id ="username" name="username"/>
      <label>密码</label>
-     <input type="password" class="password" />
-     <div class="remember-me">
+     <input type="password" class="password" id="password" name="password" />
+     <div class="jizhu">
       <input type="checkbox" id="remember-me" name="remember-me"/> 一周内免登陆 <a href="#">忘记密码</a>
      </div><!--jizhu/-->
      <div class="loginSub">
@@ -64,7 +64,7 @@
  <div class="footBox">
   <div class="footers">
    <div class="footersLeft">
-    <a href="index.html"><img src="${contextPath}/assets/images/ftlogo.jpg" width="240" height="64" /></a>
+    <a href="index.jsp"><img src="${contextPath}/assets/images/ftlogo.jpg" width="240" height="64" /></a>
     <h3 class="ftphone">400 000 0000 </h3>
     <div class="ftKe">
      客服 7x24小时(全年无休)<br />
