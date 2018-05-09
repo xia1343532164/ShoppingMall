@@ -6,4 +6,7 @@ public interface UserService {
 
 	void create(User user);
 
+	boolean check(String username);
+
+
 }

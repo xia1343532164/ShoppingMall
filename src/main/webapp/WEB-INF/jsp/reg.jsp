@@ -16,8 +16,8 @@
 
 <body>
  <div class="hrader" id="header">
-  <a href="${contextPath}/login.jsp" style="color:#FD7306;margin-left:20px;">请登录</a> 
-  <a href="${contextPath}/reg.jsp">注册</a>
+  <a href="login" style="color:#FD7306;margin-left:20px;">请登录</a> 
+  <a href="reg">注册</a>
   <div class="topNav">
    <a href="${contextPath}/index.jsp" style="color:#FD7306;">首页</a>
    <a href="${contextPath}/buy.jsp">买家</a>
@@ -69,6 +69,7 @@
     </div><!--loginBuyList/-->
     
     <div class="loginBuyList" style="border:#DEDEDE 1px solid;">
+     <p clas="field-error" style="color:red;">${error}</p>
      <label for="password1">确认密码：</label>
      <input type="password" id="password1" name="password1"/>
     </div><!--loginBuyList/-->
