@@ -21,10 +21,10 @@
   <a href="${contextPath}/login" style="color:#FD7306;margin-left:20px;">请登录</a> 
   <a href="${contextPath}/register">注册</a>
   <div class="topNav">
-   <a href="${contextPath}/index.jsp" style="color:#FD7306;">首页</a>
+   <a href="${contextPath}/index" style="color:#FD7306;">首页</a>
    <a href="${contextPath}/buy.jsp">买家</a>
    <a href="${contextPath}/sell.jsp">卖家</a>
-   <a href="${contextPath}/vip.jsp">会员中心</a>
+   <a href="${contextPath}/vipinfo">会员中心</a>
    <a href="${contextPath}/xuanshang.jsp">悬赏榜</a>
    <a href="${contextPath}/luntan.jsp" class="luntan">论坛</a>
    <a href="${contextPath}/help.jsp">帮助</a>

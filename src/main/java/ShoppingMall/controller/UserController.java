@@ -3,6 +3,7 @@ package ShoppingMall.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,8 +51,9 @@ public class UserController {
 		}
 		return "redirect:/login";
 	}
-	@RequestMapping(method=RequestMethod.GET,value="index")
-	public String index(){
+	@RequestMapping(method=RequestMethod.GET,value="/index")
+	public String index(@AuthenticationPrincipal(expression = "user") User curuser ){
+		System.out.println(curuser);
 		return "index";
 	}
 }
