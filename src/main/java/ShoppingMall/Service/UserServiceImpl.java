@@ -26,6 +26,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		return new UserDetailsImpl(user);
 	}
 
+	public void create(User user) {
+           userDao.create(user);		
+	}
+
 }
 class UserDetailsImpl extends org.springframework.security.core.userdetails.User{
 

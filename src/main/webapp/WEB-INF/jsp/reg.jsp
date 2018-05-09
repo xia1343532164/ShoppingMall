@@ -14,16 +14,16 @@
 
 <body>
  <div class="hrader" id="header">
-  <a href="login.jsp" style="color:#FD7306;margin-left:20px;">请登录</a> 
-  <a href="reg.jsp">注册</a>
+  <a href="${contextPath}/login.jsp" style="color:#FD7306;margin-left:20px;">请登录</a> 
+  <a href="${contextPath}/reg.jsp">注册</a>
   <div class="topNav">
-   <a href="index.jsp" style="color:#FD7306;">首页</a>
-   <a href="buy.jsp">买家</a>
-   <a href="sell.jsp">卖家</a>
-   <a href="vip.jsp">会员中心</a>
-   <a href="xuanshang.jsp">悬赏榜</a>
-   <a href="luntan.jsp" class="luntan">论坛</a>
-   <a href="help.jsp">帮助</a>
+   <a href="${contextPath}/index.jsp" style="color:#FD7306;">首页</a>
+   <a href="${contextPath}/buy.jsp">买家</a>
+   <a href="${contextPath}/sell.jsp">卖家</a>
+   <a href="${contextPath}/vip.jsp">会员中心</a>
+   <a href="${contextPath}/xuanshang.jsp">悬赏榜</a>
+   <a href="${contextPath}/luntan.jsp" class="luntan">论坛</a>
+   <a href="${contextPath}/help.jsp">帮助</a>
    <a href="#">&nbsp;</a>
    <a href="#" class="lan">中文</a>
    <a href="#" class="lan">English</a>
@@ -31,7 +31,7 @@
  </div><!--hrader/-->
  <div class="mainCont">
   <h1 class="logo" style="text-align:left;">
-  <a href="index.jsp"><img src="${contextPath}/assets/images/logo.png" width="304" height="74" /></a>
+  <a href="${contextPath}/index.jsp"><img src="${contextPath}/assets/images/logo.png" width="304" height="74" /></a>
   </h1>
   <div class="loginBuy">
   <div class="loginBuyLeft">
@@ -40,26 +40,27 @@
     <li class="regEqBg2">采购商</li>
     <div class="clears"></div>
    </ul><!--regEq/-->
-   <form action="${contextPath}/register" method="get" class="regForm">
+   <form action="${contextPath}/register" method="post" class="regForm">
+       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <div class="loginBuyList">
      <label for="username">用户名：</label>
-     <input type="text" id="usernmae" />
+     <input type="text" id="usernmae" name="username" />
     </div><!--loginBuyList/-->
     <div class="loginBuyList">
      <label for="email">邮箱：</label>
-     <input type="text" id="email" />
+     <input type="text" id="email" name="email"/>
     </div><!--loginBuyList/-->
     <div class="loginBuyList">
      <label for="phone">手机号码：</label>
-     <input type="text" id="phone" />
+     <input type="text" id="phone" name="phone"/>
     </div><!--loginBuyList/-->
     <div class="loginBuyList">
      <label for="password">设置密码：</label>
-     <input type="text" id="password" />
+     <input type="password" id="password" name="password"/>
     </div><!--loginBuyList/-->
     <div class="loginBuyList" style="border:#DEDEDE 1px solid;">
-     <label for="password">确认密码：</label>
-     <input type="text" id="password" />
+     <label for="password1">确认密码：</label>
+     <input type="password" id="password1" name="password1"/>
     </div><!--loginBuyList/-->
     
     <div class="loginBuyyan">
@@ -71,10 +72,10 @@
      </div>
     </div><!--loginBuyList/-->
     <div class="falv">
-     <input type="checkbox" /> <span>我已阅读并同意<a href="xieyi.jsp" target="_blank">《uniqueZi协议》</a></span>
+     <input type="checkbox" /> <span>我已阅读并同意<a href="${contextPath}/xieyi.jsp" target="_blank">《uniqueZi协议》</a></span>
     </div><!--falv/-->
     <div class="regSubs">
-     <input type="button" value=" 注 册 " />
+     <input type="submit" value=" 注 册 " />
     </div><!--regSub/-->
    </form><!--/-->
    
@@ -109,7 +110,7 @@
      </div>
     </div><!--loginBuyList/-->
     <div class="falv">
-     <input type="checkbox" /> <span>我已阅读并同意<a href="xieyi.jsp" target="_blank">《uniqueZi协议》</a></span>
+     <input type="checkbox" /> <span>我已阅读并同意<a href="${contextPath}/xieyi.jsp" target="_blank">《uniqueZi协议》</a></span>
     </div><!--falv/-->
     <div class="regSubs">
      <input type="button" value=" 注 册 " />
@@ -118,12 +119,12 @@
   </div><!--loginBuyLeft-->
   <div class="loginBuyRight">
    <div class="regDl">
-    <a href="login.jsp"><img src="${contextPath}/assets/images/dl.jpg" width="180" height="60" /></a>
-    <p>已有<a href="login.jsp">供应商</a>账号点击登录！</p>
+    <a href="${contextPath}/login.jsp"><img src="${contextPath}/assets/images/dl.jpg" width="180" height="60" /></a>
+    <p>已有<a href="${contextPath}/login.jsp">供应商</a>账号点击登录！</p>
    </div><!--regDl/-->
    <div class="regDl">
-    <a href="login.jsp"><img src="${contextPath}/assets/images/dl.jpg" width="180" height="60" /></a>
-    <p>已有<a href="login.jsp">采购商</a>账号点击登录！</p>
+    <a href="${contextPath}/login.jsp"><img src="${contextPath}/assets/images/dl.jpg" width="180" height="60" /></a>
+    <p>已有<a href="${contextPath}/login.jsp">采购商</a>账号点击登录！</p>
    </div><!--regDl/-->
   </div><!--loginBuyRight/-->
   <div class="clears"></div>
@@ -132,7 +133,7 @@
  <div class="footBox">
   <div class="footers">
    <div class="footersLeft">
-    <a href="index.jsp"><img src="${contextPath}/assets/images/ftlogo.jpg" width="240" height="64" /></a>
+    <a href="${contextPath}/index.jsp"><img src="${contextPath}/assets/images/ftlogo.jpg" width="240" height="64" /></a>
     <h3 class="ftphone">400 000 0000 </h3>
     <div class="ftKe">
      客服 7x24小时(全年无休)<br />
