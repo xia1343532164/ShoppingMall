@@ -42,7 +42,7 @@ public class UserController {
 		if (bindingResult.hasErrors()) {
 			return "reg";
 		} else if (!user.getPassword().equals(password1)) {
-			model.addAttribute("error", "ÃÜÂë²»Ò»ÖÂ,ÇëÖØĞÂÊäÈë");
+			model.addAttribute("error", "ä¸¤æ¬¡å¯†ç ä¸ä¸€è‡´");
 			return "reg";
 		} else {
 			String encode = passwordEncoder.encode(user.getPassword());

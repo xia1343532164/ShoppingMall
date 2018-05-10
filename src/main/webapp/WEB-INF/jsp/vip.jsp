@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,8 +17,9 @@
 <body>
  <div class="hrader" id="header">
   <div class="top">
-   <a href="login.jsp" style="color:#C94E13;">请登录</a> 
-   <a href="reg.jsp">注册</a>
+  <span style="color:#FD7306;margin-left:20px;">欢迎您：<sec:authentication property="principal.user.username"/></span>
+<!--    <a href="login.jsp" style="color:#C94E13;">请登录</a> 
+   <a href="reg.jsp">注册</a> -->
    <ul class="topNav">
     <li><a href="order.jsp">我的订单 </a></li>
     <li class="gouwuche"><a href="car.jsp">购物车</a> <strong style="color:#C94E13;">3</strong></li>
