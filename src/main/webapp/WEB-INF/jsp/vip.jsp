@@ -11,6 +11,7 @@
 <link type="text/css" href="${contextPath}/assets/css/css.css" rel="stylesheet" />
 <script type="text/javascript" src="${contextPath}/assets/js/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="${contextPath}/assets/js/js.js"></script>
+	<link href="${contextPath}/assets/toastr/toastr.min.css" rel="stylesheet"/>
 
 </head>
 
@@ -98,39 +99,49 @@
       <table class="grzx" width="705" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="90"><span>*</span>真实姓名：</td>
-          <td width="430"><input name="realname" type="text" class="text inputxt" /></td>
+          <td width="430"><input name="realname" type="text" class="text inputxt" value="${user.realname}"/></td>
           <td rowspan="8" valign="top"><div id="tx"><img src="${contextPath}/assets/images/vipImg.jpg" /></div>
             <span class="file"><input name="" type="file" class="file1" /></span></td>
         </tr>
         <tr>
           <td><span>*</span>所在城市：</td>
-          <td><select name="city">
+          <td><select name="city"  >
               <option>省</option>
               <option>上海</option>
             </select>
-            <select name="city">
+            <select name="city"  >
               <option>市</option>
               <option>上海</option>
             </select>
-            <select name="city">
+            <select name="city" >
               <option>区</option>
               <option>宝山</option>
             </select></td>
         </tr>
         <tr>
           <td>&nbsp;性别：</td>
-          <td><input type="radio" name="sex" value="男" id="person" class="pr1" datatype="*" nullmsg="请选择性别！"  />
-            男　
-            <input type="radio" name="sex" value="女" id="company" class="pr1" />
-            女</td>
+          <td>
+          <c:if test="${user.sex eq null}">
+            <input type="radio" name="sex" value="男" id="person" class="pr1" datatype="*" nullmsg="请选择性别！"  /> 男　
+            <input type="radio" name="sex" value="女" id="company" class="pr1"  /> 女
+          </c:if>
+          <c:if test="${user.sex eq '男'}">
+            <input type="radio" name="sex" value="男" id="person" class="pr1" datatype="*" nullmsg="请选择性别！" checked="checked" /> 男　
+            <input type="radio" name="sex" value="女" id="company" class="pr1"  /> 女
+          </c:if>
+          <c:if test="${user.sex eq'女'}">
+          <input type="radio" name="sex" value="男" id="person" class="pr1" datatype="*" nullmsg="请选择性别！" /> 男　
+            <input type="radio" name="sex" value="女" id="company" class="pr1" checked="checked"  /> 女
+          </c:if>
+          </td>
         </tr>
         <tr>
           <td>&nbsp;EMAIL:</td>
-          <td><input type="text" class="text1" datatype="e" name="email" /></td>
+          <td><input type="text" class="text1" datatype="e" name="email" value="${user.email}"/></td>
         </tr>
         <tr>
           <td>&nbsp;身份证:</td>
-          <td><input name="idcard" type="text" class="text1 inputxt" datatype="idcard" nullmsg="请填写身份证号码！" errormsg="您填写的身份证号码不对！必须位数字且不低于18位" /></td>
+          <td><input name="idcard" type="text"  value="${user.idcard}" class="text1 inputxt" datatype="idcard" nullmsg="请填写身份证号码！" errormsg="您填写的身份证号码不对！必须位数字且不低于18位" /></td>
         </tr>
         <tr>
           <td>&nbsp;&nbsp;类别：</td>
@@ -138,7 +149,7 @@
         </tr>
         <tr>
           <td>&nbsp;个人简介：</td>
-          <td><textarea tip="请在这里输入您的简介。" altercss="gray" class="gray" name="sysopsis"  datatype="*"value="">请在这里输入您的简介。</textarea></td>
+          <td><textarea tip="请在这里输入您的简介。" altercss="gray" class="gray" name="sysopsis"  datatype="*" value="${user.sysopsis}">${user.sysopsis}</textarea></td>
         </tr>
         <tr>
           <td>&nbsp;</td>
@@ -212,5 +223,11 @@
   <br />
   <span>&copy; 2014 Unqezi 使用前必读 沪ICP备 12007626号-1</span>
  </div><!--footer/-->
+ <script src="${contextPath}/assets/toastr/toastr.min.js"></script>
+   <c:if test="${user.sex != null}">
+    <script type="text/javascript">
+     toastr.success( '修改成功');
+    </script>
+  </c:if>
 </body>
 </html>
