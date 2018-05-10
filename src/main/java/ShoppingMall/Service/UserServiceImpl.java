@@ -30,9 +30,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
            userDao.create(user);		
 	}
 
-	public boolean check(String username) {
-			return userDao.check(username);		
-	}
 }
 class UserDetailsImpl extends org.springframework.security.core.userdetails.User{
 

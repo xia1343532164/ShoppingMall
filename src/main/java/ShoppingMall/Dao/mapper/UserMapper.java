@@ -8,5 +8,4 @@ public interface UserMapper {
 
 	void create(User user);
 
-	boolean check(String username);
 }

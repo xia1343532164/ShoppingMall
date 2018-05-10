@@ -2,10 +2,8 @@ package ShoppingMall.Service;
 
 import ShoppingMall.entity.User;
 
-public interface UserService {
+public interface VipService {
 
-	void create(User user);
-
-
+	void saveinfo(User user);
 
 }

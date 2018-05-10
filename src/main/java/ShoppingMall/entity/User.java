@@ -7,19 +7,27 @@ import javax.validation.constraints.Size;
 public class User {
 
 	private Integer id;
-	@Size(min = 2,max = 16 ,message="ÓÃ»§Ãû±ØÐëÊÇ2~16¸ö×Ö")
+	@Size(min = 2,max = 16 ,message="ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2~16ï¿½ï¿½ï¿½ï¿½")
 	private String username;
 	
-	@Size(min = 6 ,max = 64 ,message="ÃÜÂë³¤¶ÈÎª6~64")
+	@Size(min = 6 ,max = 64 ,message="ï¿½ï¿½ï¿½ë³¤ï¿½ï¿½Îª6~64")
 	private String password;
 	
-	@Pattern(regexp="^1[3|4|5|7|8][0-9]{9}$",message="ÊÖ»úºÅ²»·ûºÏ¹æÔò")
+	@Pattern(regexp="^1[3|4|5|7|8][0-9]{9}$",message="ï¿½Ö»ï¿½ï¿½Å²ï¿½ï¿½ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½")
 	private String phone;
 	
 	private String role;
 	
-	@Email(regexp="^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z0-9]{2,6}$",message="ÓÊÏäºÅ²»·ûºÏ¹æÔò")
+	@Email(regexp="^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z0-9]{2,6}$",message="ï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½")
 	private String email;
+	
+	private String realname;
+	private String city;
+	private String sex;
+	private String idcard;
+	private String category;
+	private String sysopsis;
+				   
 	
 	public Integer getId() {
 		return id;
@@ -59,11 +67,48 @@ public class User {
 		this.email = email;
 	}
 	
+	
+	public String getRealname() {
+		return realname;
+	}
+	public void setRealname(String realname) {
+		this.realname = realname;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	public String getIdcard() {
+		return idcard;
+	}
+	public void setIdcard(String idcard) {
+		this.idcard = idcard;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getSysopsis() {
+		return sysopsis;
+	}
+	public void setSysopsis(String sysopsis) {
+		this.sysopsis = sysopsis;
+	}
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", phone=" + phone + ", role="
-				+ role + ", email=" + email + "]";
+				+ role + ", email=" + email + ", realname=" + realname + ", city=" + city + ", sex=" + sex + ", idcard="
+				+ idcard + ", category=" + category + ", sysopsis=" + sysopsis + "]";
 	}
-
 	
 }
