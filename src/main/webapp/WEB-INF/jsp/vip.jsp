@@ -73,7 +73,16 @@
  </div><!--navBox/-->
  <div class="vipBox">
   <div class="vipLeft">
-   <h2 class="headImg"><img src="${contextPath}/assets/images/vipImg.jpg" width="183" height="169" /></h2>
+   <div class="headImg">
+   <c:choose>
+				<c:when test="${user.picturePath != null}">
+					<img src="${contextPath}/user-picture/${user.picturePath}" width="183" height="169" />
+				</c:when>
+				<c:otherwise>
+					无
+				</c:otherwise>
+			</c:choose>
+   </div>
    <h3 class="vipName">测试webqin</h3>
    <dl class="vipNav">
     <dt class="vip_1 vipCur">买家中心</dt>
@@ -101,7 +110,7 @@
           <td width="90"><span>*</span>真实姓名：</td>
           <td width="430"><input name="realname" type="text" class="text inputxt" value="${user.realname}"/></td>
           <td rowspan="8" valign="top"><div id="tx"><img src="${contextPath}/assets/images/vipImg.jpg" /></div>
-            <span class="file"><input name="picture" type="file" class="file1" /></span></td>
+            <span class="file"><input name="picture" type="file" class="file1" /></span>上传头像</td>
         </tr>
         <tr>
           <td><span>*</span>所在城市：</td>

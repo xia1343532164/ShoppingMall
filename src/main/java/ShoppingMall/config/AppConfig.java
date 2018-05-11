@@ -57,7 +57,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/assets/**").addResourceLocations("/public/");
-		registry.addResourceHandler("/user-pictures/**").addResourceLocations("file:///D:/upload/");
+		registry.addResourceHandler("/user-picture/**").addResourceLocations("file:///D:/upload/");
 	}
 	//配置mybatis
 	@Bean

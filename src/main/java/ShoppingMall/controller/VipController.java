@@ -30,6 +30,7 @@ public class VipController {
 	@RequestMapping(method=RequestMethod.GET,value="/vipinfo")
 	public String vipinfo(@AuthenticationPrincipal(expression = "user") User user1,Model model){
 		model.addAttribute("user", user1);
+		System.out.println(user1);
 		return "vip";
 	}
 	
@@ -47,6 +48,7 @@ public class VipController {
 		}
 		    //把我登录的id设进表单，得到要改的id
 	     	user.setId(user1.getId());
+	     	//TODO
 	     	String filename = user.getPicture().getOriginalFilename();
 	        String newFileName = String.valueOf(System.currentTimeMillis())+filename;
             user.getPicture().transferTo(new File(uploadDir,newFileName));
@@ -59,4 +61,9 @@ public class VipController {
 		/*}*/
 	     	return "vip";
 	}
+	@RequestMapping(method=RequestMethod.GET,value="vipPwd")
+	public String vippwd(){
+		return "vipPwd";
+	}
+	
 }
