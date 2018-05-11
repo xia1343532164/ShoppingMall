@@ -31,7 +31,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @MapperScan("ShoppingMall.Dao.mapper")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
-	//Ó³Éäjsp
+	//æ˜ å°„jsp
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
            registry.jsp("/WEB-INF/jsp/", ".jsp");
@@ -53,12 +53,13 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	public JdbcTemplate template(DataSource dataSource){
 		return new JdbcTemplate(dataSource);
 	}
-	//Ó³Éäpublic
+	//æ˜ å°„public
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/assets/**").addResourceLocations("/public/");
+		registry.addResourceHandler("/user-pictures/**").addResourceLocations("file:///D:/upload/");
 	}
-	//ÅäÖÃmybatis
+	//é…ç½®mybatis
 	@Bean
 	public SqlSessionFactoryBean sqlSessionFactoryBean(DataSource dataSource){
 		SqlSessionFactoryBean sf = new SqlSessionFactoryBean();
@@ -68,13 +69,13 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		}
     
 	@Bean
-	public MultipartResolver multipartResolver(){//¶à²¿½âÎöÆ÷
+	public MultipartResolver multipartResolver() { // æ–‡ä»¶åå¿…é¡»è¦è¿™ä¹ˆå†™ï¼Œå› ä¸ºspring mvcä¼šç”¨è¿™ä¸ªidæŸ¥æ‰¾å¤šéƒ¨è§£æå™¨
 		CommonsMultipartResolver mr = new CommonsMultipartResolver();
-		mr.setMaxUploadSize(10*1024*1024);
+		mr.setMaxUploadSize(10 * 1024 * 1024); // å­—èŠ‚
 		return mr;
 	}
 	
-	//ÊÂÎñ
+	//äº‹åŠ¡
      @Bean
      public PlatformTransactionManager transactionManager(DataSource dataSource){
 		return new DataSourceTransactionManager(dataSource);

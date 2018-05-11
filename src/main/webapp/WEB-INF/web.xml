@@ -21,28 +21,18 @@
       <param-value>ShoppingMall.config.AppConfig</param-value>
     </init-param>
     
-    <!-- <multipart-config>
+    <load-on-startup>1</load-on-startup>
+    <multipart-config>
         <max-file-size>10485760</max-file-size>
         <max-request-size>20971520</max-request-size>
         <file-size-threshold>5242880</file-size-threshold>
-     </multipart-config>   -->	
+     </multipart-config>  
     
-    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>dispatcherServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  
-  <!--   负责在spring security之前解析多部表单（文件上传），这样security才能拿到csrf token参数 -->
-   <filter>
- 	<filter-name>multipartFilter</filter-name>
- 	<filter-class>org.springframework.web.multipart.support.MultipartFilter</filter-class>
-   </filter>
-   <filter-mapping>
- 	<filter-name>multipartFilter</filter-name>
- 	<url-pattern>/*</url-pattern>
-   </filter-mapping>  
   
   <filter>
     <filter-name>characterEncodingFilter</filter-name>
@@ -60,6 +50,17 @@
     <filter-name>characterEncodingFilter</filter-name>
     <url-pattern>*</url-pattern>
   </filter-mapping>
+  
+  <!--   负责在spring security之前解析多部表单（文件上传），这样security才能拿到csrf token参数 -->
+   <filter>
+ 	<filter-name>multipartFilter</filter-name>
+ 	<filter-class>org.springframework.web.multipart.support.MultipartFilter</filter-class>
+   </filter>
+   <filter-mapping>
+ 	<filter-name>multipartFilter</filter-name>
+ 	<url-pattern>/*</url-pattern>
+   </filter-mapping>  
+  
   <filter>
     <filter-name>springSecurityFilterChain</filter-name>
     <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

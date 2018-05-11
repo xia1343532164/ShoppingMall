@@ -5,7 +5,8 @@
   <mapper namespace="ShoppingMall.Dao.mapper.VipMapper">
   
 	<update id="saveinfo">
-		update shoppinguser set realname=#{realname},city=#{city},sex=#{sex},
-		email=#{email},	idcard=#{idcard},synopsis=#{sysopsis} where id = #{id}
+		update shoppinguser set realname=#{realname},city=#{city},sex=#{sex},email=#{email},
+		 idcard=#{idcard},synopsis=#{sysopsis},picturePath=#{picturePath}
+		 where id = #{id}
 	</update>
 </mapper>

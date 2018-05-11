@@ -4,21 +4,23 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class User {
 
 	private Integer id;
-	@Size(min = 2,max = 16 ,message="�û���������2~16����")
+	@Size(min = 2,max = 16 ,message="长度为2~16")
 	private String username;
 	
-	@Size(min = 6 ,max = 64 ,message="���볤��Ϊ6~64")
+	@Size(min = 6 ,max = 64 ,message="密码长度为6~64")
 	private String password;
 	
-	@Pattern(regexp="^1[3|4|5|7|8][0-9]{9}$",message="�ֻ��Ų����Ϲ���")
+	@Pattern(regexp="^1[3|4|5|7|8][0-9]{9}$",message="手机号不正确")
 	private String phone;
 	
 	private String role;
 	
-	@Email(regexp="^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z0-9]{2,6}$",message="����Ų����Ϲ���")
+	@Email(regexp="^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z0-9]{2,6}$",message="邮箱不符合规则")
 	private String email;
 	
 	private String realname;
@@ -27,6 +29,8 @@ public class User {
 	private String idcard;
 	private String category;
 	private String sysopsis;
+	private MultipartFile picture;
+	private String picturePath;
 				   
 	
 	public Integer getId() {
@@ -104,11 +108,23 @@ public class User {
 	public void setSysopsis(String sysopsis) {
 		this.sysopsis = sysopsis;
 	}
+	
+	public MultipartFile getPicture() {
+		return picture;
+	}
+	public void setPicture(MultipartFile picture) {
+		this.picture = picture;
+	}
+	public String getPicturePath() {
+		return picturePath;
+	}
+	public void setPicturePath(String picturePath) {
+		this.picturePath = picturePath;
+	}
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", phone=" + phone + ", role="
 				+ role + ", email=" + email + ", realname=" + realname + ", city=" + city + ", sex=" + sex + ", idcard="
-				+ idcard + ", category=" + category + ", sysopsis=" + sysopsis + "]";
+				+ idcard + ", category=" + category + ", sysopsis=" + sysopsis + ", picturePath=" + picturePath + "]";
 	}
-	
 }

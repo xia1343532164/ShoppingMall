@@ -93,7 +93,7 @@
   <div class="vipRight">
    <h2 class="vipTitle">个人中心</h2>
    
-   <form action="${contextPath}/vipinfo" class="registerform" method="post">
+   <form action="${contextPath}/vipinfo" class="registerform" method="post" enctype="multipart/form-data">
        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
        
       <table class="grzx" width="705" border="0" cellspacing="0" cellpadding="0">
@@ -121,17 +121,17 @@
         <tr>
           <td>&nbsp;性别：</td>
           <td>
-          <c:if test="${user.sex eq null}">
-            <input type="radio" name="sex" value="男" id="person" class="pr1" datatype="*" nullmsg="请选择性别！"  /> 男　
-            <input type="radio" name="sex" value="女" id="company" class="pr1"  /> 女
+        <c:if test="${user.sex eq null}">
+            <input type="radio" name="sex" value="F" id="person" class="pr1" datatype="*" nullmsg="请选择性别！"  /> 男　
+            <input type="radio" name="sex" value="M" id="company" class="pr1"  /> 女
           </c:if>
-          <c:if test="${user.sex eq '男'}">
-            <input type="radio" name="sex" value="男" id="person" class="pr1" datatype="*" nullmsg="请选择性别！" checked="checked" /> 男　
-            <input type="radio" name="sex" value="女" id="company" class="pr1"  /> 女
+          <c:if test="${user.sex eq 'F'}">
+            <input type="radio" name="sex" value="F" id="person" class="pr1" datatype="*" nullmsg="请选择性别！" checked="checked" /> 男　
+            <input type="radio" name="sex" value="M" id="company" class="pr1"  /> 女
           </c:if>
-          <c:if test="${user.sex eq'女'}">
-          <input type="radio" name="sex" value="男" id="person" class="pr1" datatype="*" nullmsg="请选择性别！" /> 男　
-            <input type="radio" name="sex" value="女" id="company" class="pr1" checked="checked"  /> 女
+          <c:if test="${user.sex eq'M'}">
+          <input type="radio" name="sex" value="F" id="person" class="pr1" datatype="*" nullmsg="请选择性别！" /> 男　
+            <input type="radio" name="sex" value="M" id="company" class="pr1" checked="checked"  /> 女
           </c:if>
           </td>
         </tr>
@@ -153,7 +153,7 @@
         </tr>
         <tr>
           <td>&nbsp;</td>
-          <td><input name="" value="保存资料" type="submit" class="submit" /></td>
+          <td><input name="picture" value="保存资料" type="submit" class="submit" /></td>
         </tr>
       </table>
       </form>
