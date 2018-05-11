@@ -8,4 +8,6 @@ public interface UserMapper {
 
 	void create(User user);
 
+	void saveinfo(User user);
+
 }

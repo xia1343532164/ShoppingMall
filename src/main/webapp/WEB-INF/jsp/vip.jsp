@@ -101,7 +101,7 @@
           <td width="90"><span>*</span>真实姓名：</td>
           <td width="430"><input name="realname" type="text" class="text inputxt" value="${user.realname}"/></td>
           <td rowspan="8" valign="top"><div id="tx"><img src="${contextPath}/assets/images/vipImg.jpg" /></div>
-            <span class="file"><input name="" type="file" class="file1" /></span></td>
+            <span class="file"><input name="picture" type="file" class="file1" /></span></td>
         </tr>
         <tr>
           <td><span>*</span>所在城市：</td>
@@ -122,15 +122,15 @@
           <td>&nbsp;性别：</td>
           <td>
         <c:if test="${user.sex eq null}">
-            <input type="radio" name="sex" value="F" id="person" class="pr1" datatype="*" nullmsg="请选择性别！"  /> 男　
+            <input type="radio" name="sex" value="F" id="person" class="pr1" datatype="*"   /> 男　
             <input type="radio" name="sex" value="M" id="company" class="pr1"  /> 女
           </c:if>
           <c:if test="${user.sex eq 'F'}">
-            <input type="radio" name="sex" value="F" id="person" class="pr1" datatype="*" nullmsg="请选择性别！" checked="checked" /> 男　
+            <input type="radio" name="sex" value="F" id="person" class="pr1" datatype="*" checked="checked" /> 男　
             <input type="radio" name="sex" value="M" id="company" class="pr1"  /> 女
           </c:if>
           <c:if test="${user.sex eq'M'}">
-          <input type="radio" name="sex" value="F" id="person" class="pr1" datatype="*" nullmsg="请选择性别！" /> 男　
+          <input type="radio" name="sex" value="F" id="person" class="pr1" datatype="*" /> 男　
             <input type="radio" name="sex" value="M" id="company" class="pr1" checked="checked"  /> 女
           </c:if>
           </td>
@@ -141,7 +141,7 @@
         </tr>
         <tr>
           <td>&nbsp;身份证:</td>
-          <td><input name="idcard" type="text"  value="${user.idcard}" class="text1 inputxt" datatype="idcard" nullmsg="请填写身份证号码！" errormsg="您填写的身份证号码不对！必须位数字且不低于18位" /></td>
+          <td><input name="idcard" type="text"  value="${user.idcard}" class="text1 inputxt" datatype="idcard" ></td>
         </tr>
         <tr>
           <td>&nbsp;&nbsp;类别：</td>
@@ -153,7 +153,7 @@
         </tr>
         <tr>
           <td>&nbsp;</td>
-          <td><input name="picture" value="保存资料" type="submit" class="submit" /></td>
+          <td><input name="" value="保存资料" type="submit" class="submit" /></td>
         </tr>
       </table>
       </form>
