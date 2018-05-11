@@ -13,7 +13,12 @@ public class VipDaoImpl implements VipDao {
 
 	@Override
 	public void saveinfo(User user) {
-		System.err.println(user);
 		userMapper.saveinfo(user);
+	}
+       
+	@Override
+	public void alterPassword(Integer id, String encode) {
+		userMapper.alterPassword(id,encode);		
+		
 	}
 }

@@ -2,6 +2,8 @@ package ShoppingMall.controller;
 
 import java.io.File;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -13,12 +15,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ShoppingMall.Service.VipService;
+import ShoppingMall.entity.PasswordSetForm;
 import ShoppingMall.entity.User;
 
 @Controller
 public class VipController {
 	
 	private VipService vipService;
+	
 	
 	private String uploadDir = "E:/upload";
 	
@@ -33,11 +37,11 @@ public class VipController {
 		System.out.println(user1);
 		return "vip";
 	}
-	
+
 	@RequestMapping(method=RequestMethod.POST,value="/vipinfo")
 	//user1是登录的,user是表单提交的
 	//@AuthenticationPrincipal(expression="") 获取当前登录的对象
-	public String vipinfosave(@AuthenticationPrincipal(expression="user") User user1,@ModelAttribute User user,
+	public String vipinfosave(@AuthenticationPrincipal(expression="user") User user1,@Valid @ModelAttribute User user,
 			BindingResult bindingResult,RedirectAttributes redirectAttributes) throws Exception{// 表单bean封装
 	     	if(user.getPicture().getSize()==0||
 					!user.getPicture().getContentType().toLowerCase().startsWith("image/")){
@@ -61,9 +65,23 @@ public class VipController {
 		/*}*/
 	     	return "vip";
 	}
-	@RequestMapping(method=RequestMethod.GET,value="vipPwd")
+	@RequestMapping(method=RequestMethod.GET,value="/vipPwd")
 	public String vippwd(){
 		return "vipPwd";
 	}
-	
+	@RequestMapping(method=RequestMethod.POST,value="/vipPwd")
+	public String alterPassword(@AuthenticationPrincipal(expression="user")User user,
+			@ModelAttribute PasswordSetForm pwd,Model model){
+		if(!pwd.getPassword().equals(pwd.getPassword2())||pwd.getPassword().trim().isEmpty()){
+			model.addAttribute("error", "密码错误");
+			return "vipPwd";
+		}else{
+               Integer id = user.getId();
+               String password = pwd.getPassword();
+               vipService.alterPassword(id,password);
+               model.addAttribute("ture", "修改成功");
+		}
+		return "vipPwd";
+		
+	}
 }

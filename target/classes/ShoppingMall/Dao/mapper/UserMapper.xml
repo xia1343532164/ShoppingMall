@@ -18,5 +18,7 @@
 		 idcard=#{idcard},synopsis=#{sysopsis},picturePath=#{picturePath}
 		 where id = #{id}
 	</update>
-
+     <update id="alterPassword">
+             update shoppinguser set password=#{encode} where id =#{id}
+     </update>
 </mapper>

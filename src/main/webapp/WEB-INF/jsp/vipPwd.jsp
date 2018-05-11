@@ -16,12 +16,12 @@
 <body>
  <div class="hrader" id="header">
   <div class="top">
-   <a href="login.html" style="color:#C94E13;">请登录</a> 
-   <a href="reg.html">注册</a>
+   <a href="login.jsp" style="color:#C94E13;">请登录</a> 
+   <a href="reg.jsp">注册</a>
    <ul class="topNav">
-    <li><a href="order.html">我的订单 </a></li>
-    <li class="gouwuche"><a href="car.html">购物车</a> <strong style="color:#C94E13;">3</strong></li>
-    <li class="shoucangjia"><a href="shoucang.html">收藏夹</a></li>
+    <li><a href="order.jsp">我的订单 </a></li>
+    <li class="gouwuche"><a href="car.jsp">购物车</a> <strong style="color:#C94E13;">3</strong></li>
+    <li class="shoucangjia"><a href="shoucang.jsp">收藏夹</a></li>
     <li class="kefus"><a href="#">联系客服</a></li>
 <li><a href="#" class="lan">中文</a></li>
     <li><a href="#" class="lan">English</a></li>
@@ -31,7 +31,7 @@
  </div><!--hrader/-->
  <div class="mid">
   <h1 class="logo" style="text-align:left;">
-  <a href="index.html"><img src="${contextPath}/assets/images/logo.png" width="304" height="74" /></a>
+  <a href="index.jsp"><img src="${contextPath}/assets/images/logo.png" width="304" height="74" /></a>
   </h1>
   <form action="#" method="get" class="subBox">
    <div class="subBox2">
@@ -48,23 +48,23 @@
   </form><!--subBox/-->
   <div class="ding-gou">
    <div class="ding">
-    <a href="order.html"><img src="${contextPath}/assets/images/dingdan.jpg" width="106" height="32" /></a>
+    <a href="order.jsp"><img src="${contextPath}/assets/images/dingdan.jpg" width="106" height="32" /></a>
    </div><!--ding/-->
    <div class="gou">
-    <a href="car.html"><img src="${contextPath}/assets/images/gouwuche.jpg" width="126" height="32" /></a>
+    <a href="car.jsp"><img src="${contextPath}/assets/images/gouwuche.jpg" width="126" height="32" /></a>
    </div><!--gou/-->
    <div class="clears"></div>
   </div><!--ding-gou/-->
  </div><!--mid-->
  <div class="navBox navBg3">
   <ul class="nav">
-   <li><a href="index.html">首页</a></li>
-   <li><a href="buy.html">买家</a></li>
-   <li><a href="sell.html">卖家</a></li>
-   <li class="navCur"><a href="vip.html">会员中心</a></li>
-   <li><a href="xuanshang.html">悬赏榜</a></li>
-   <li><a href="luntan.html" class="luntan">论坛</a></li>
-   <li><a href="help.html">帮助</a></li>
+   <li><a href="index.jsp">首页</a></li>
+   <li><a href="buy.jsp">买家</a></li>
+   <li><a href="sell.jsp">卖家</a></li>
+   <li class="navCur"><a href="vip.jsp">会员中心</a></li>
+   <li><a href="xuanshang.jsp">悬赏榜</a></li>
+   <li><a href="luntan.jsp" class="luntan">论坛</a></li>
+   <li><a href="help.jsp">帮助</a></li>
    <div class="clears"></div>
   </ul><!--nav/-->
  </div><!--navBox/-->
@@ -74,37 +74,40 @@
    <h3 class="vipName">测试webqin</h3>
    <dl class="vipNav">
     <dt class="vip_1 vipCur">买家中心</dt>
-     <dd><a href="vipOrder.html">我的订单</a></dd>
-     <dd><a href="vipShoucang.html">收藏关注</a></dd>
+     <dd><a href="vipOrder.jsp">我的订单</a></dd>
+     <dd><a href="vipShoucang.jsp">收藏关注</a></dd>
     <dt class="vip_2">账户设置</dt>
-     <dd><a href="vip.html">个人信息</a></dd>
-     <dd class="ddCur"><a href="vipPwd.html">密码修改</a></dd>
-     <dd><a href="vipAddress.html">收货地址</a></dd>
-     <dd><a href="vipXiaofei.html">消费记录</a></dd>
+     <dd><a href="${contextPath}/vipinfo">个人信息</a></dd>
+     <dd class="ddCur"><a href="vipPwd.jsp">密码修改</a></dd>
+     <dd><a href="vipAddress.jsp">收货地址</a></dd>
+     <dd><a href="vipXiaofei.jsp">消费记录</a></dd>
     <dt class="vip_3">客户服务</dt>
-     <dd><a href="vipQuxiao.html">取消订单/退货</a></dd>
+     <dd><a href="vipQuxiao.jsp">取消订单/退货</a></dd>
      
-     <dd><a href="vipTousu.html">我的投诉</a></dd>
+     <dd><a href="vipTousu.jsp">我的投诉</a></dd>
    </dl><!--vipNav/-->
   </div><!--vipLeft/-->
   <div class="vipRight">
    <h2 class="vipTitle">密码修改</h2>
    
-   <form action="" class="registerform">
+   <form action="" class="registerform" method="post">
+   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
       <table class="grzx" width="705" border="0" cellspacing="0" cellpadding="0">
         <tr>
+             <p style="color:red;">${error }</p>
+             <p style="color:red;">${ture }</p>
           <td width="90">新密码：</td>
-          <td width="430"><input type="text" class="text inputxt" name="userpassword" datatype="*6-16" nullmsg="请设置密码！" errormsg="密码范围在6~16位之间！" /></td>
+          <td width="430"><input type="password" class="text inputxt" name="password" datatype="*6-16" nullmsg="请设置密码！" errormsg="密码范围在6~16位之间！" /></td>
           <td rowspan="4" valign="top"><div id="tx"><img src="${contextPath}/assets/images/vipImg.jpg" /></div></td>
         </tr>
         <tr>
           <td>确认密码：</td>
-          <td><input type="text" class="text inputxt"  name="userpassword2" datatype="*" recheck="userpassword" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！"  /></td>
+          <td><input type="password" class="text inputxt"  name="password2" datatype="*" recheck="password" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！"  /></td>
         </tr>
-        <tr>
+   <!--      <tr>
           <td>验证码：</td>
           <td><input name="" type="text" class="text2" /></td>
-        </tr>
+        </tr> -->
         <tr>
           <td><input name="" value="马上修改" type="submit" class="submit" /></td>
           <td></td>
@@ -117,7 +120,7 @@
  <div class="footBox">
   <div class="footers">
    <div class="footersLeft">
-    <a href="index.html"><img src="${contextPath}/assets/images/ftlogo.jpg" width="240" height="64" /></a>
+    <a href="index.jsp"><img src="${contextPath}/assets/images/ftlogo.jpg" width="240" height="64" /></a>
     <h3 class="ftphone">400 000 0000 </h3>
     <div class="ftKe">
      客服 7x24小时(全年无休)<br />

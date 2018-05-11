@@ -1,6 +1,7 @@
 package ShoppingMall.entity;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -9,24 +10,31 @@ import org.springframework.web.multipart.MultipartFile;
 public class User {
 
 	private Integer id;
+	@NotNull
 	@Size(min = 2,max = 16 ,message="长度为2~16")
 	private String username;
 	
+	@NotNull
 	@Size(min = 6 ,max = 64 ,message="密码长度为6~64")
 	private String password;
 	
+	@NotNull
 	@Pattern(regexp="^1[3|4|5|7|8][0-9]{9}$",message="手机号不正确")
 	private String phone;
 	
 	private String role;
 	
+	@NotNull
 	@Email(regexp="^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z0-9]{2,6}$",message="邮箱不符合规则")
 	private String email;
 	
 	private String realname;
+	
 	private String city;
+	
 	private String sex;
 	private String idcard;
+	
 	private String category;
 	private String sysopsis;
 	private MultipartFile picture;
