@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ShoppingMall.Service.VipService;
 import ShoppingMall.entity.PasswordSetForm;
 import ShoppingMall.entity.User;
+import ShoppingMall.entity.VipAddress;
 
 @Controller
 public class VipController {
@@ -73,15 +74,25 @@ public class VipController {
 	public String alterPassword(@AuthenticationPrincipal(expression="user")User user,
 			@ModelAttribute PasswordSetForm pwd,Model model){
 		if(!pwd.getPassword().equals(pwd.getPassword2())||pwd.getPassword().trim().isEmpty()){
-			model.addAttribute("error", "密码错误");
+			model.addAttribute("error", "密码错误,请重新输入");
 			return "vipPwd";
 		}else{
                Integer id = user.getId();
                String password = pwd.getPassword();
                vipService.alterPassword(id,password);
-               model.addAttribute("ture", "修改成功");
+               model.addAttribute("Success", "修改成功");
 		}
 		return "vipPwd";
-		
 	}
+	@RequestMapping(method=RequestMethod.GET,value="/vipAddress")
+	public String vipAddress(){
+		return "vipAddress";
+}
+	@RequestMapping(method=RequestMethod.POST,value="/vipAddress")
+   public String AddressAdd(@AuthenticationPrincipal(expression="user")User user, @ModelAttribute VipAddress address,Model model){
+		address.setUser_id(user.getId());
+		vipService.addAddress(address);
+	     model.addAttribute("Success","添加地址成功");
+		return "vipAddress";
+   }	
 }

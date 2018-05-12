@@ -79,7 +79,7 @@
     <dt class="vip_2">账户设置</dt>
      <dd><a href="${contextPath}/vipinfo">个人信息</a></dd>
      <dd class="ddCur"><a href="vipPwd.jsp">密码修改</a></dd>
-     <dd><a href="vipAddress.jsp">收货地址</a></dd>
+     <dd><a href="${contextPath}/vipAddress">收货地址</a></dd>
      <dd><a href="vipXiaofei.jsp">消费记录</a></dd>
     <dt class="vip_3">客户服务</dt>
      <dd><a href="vipQuxiao.jsp">取消订单/退货</a></dd>
@@ -94,8 +94,8 @@
    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
       <table class="grzx" width="705" border="0" cellspacing="0" cellpadding="0">
         <tr>
-             <p style="color:red;">${error }</p>
-             <p style="color:red;">${ture }</p>
+             <div style="color:red;">${error }</div>
+             <div style="color:red;">${Success }</div>
           <td width="90">新密码：</td>
           <td width="430"><input type="password" class="text inputxt" name="password" datatype="*6-16" nullmsg="请设置密码！" errormsg="密码范围在6~16位之间！" /></td>
           <td rowspan="4" valign="top"><div id="tx"><img src="${contextPath}/assets/images/vipImg.jpg" /></div></td>

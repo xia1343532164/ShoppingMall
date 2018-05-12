@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import ShoppingMall.Dao.VipDao;
 import ShoppingMall.entity.User;
+import ShoppingMall.entity.VipAddress;
 
 @Service
 public class VipServieImpl implements VipService {
@@ -28,6 +29,11 @@ public class VipServieImpl implements VipService {
 	public void alterPassword(Integer id, String password) {
 		String encode = passwordEncoder.encode(password);
 		vipDao.alterPassword(id,encode);
+	}
+
+	@Override
+	public void addAddress(VipAddress address) {
+		vipDao.addAddress(address);		
 	}
 
 }

@@ -1,5 +1,7 @@
 package ShoppingMall.entity;
 
+import java.util.List;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -39,6 +41,8 @@ public class User {
 	private String sysopsis;
 	private MultipartFile picture;
 	private String picturePath;
+	
+	private List<VipAddress> vipAddress; 
 				   
 	
 	public Integer getId() {
@@ -129,10 +133,18 @@ public class User {
 	public void setPicturePath(String picturePath) {
 		this.picturePath = picturePath;
 	}
+	
+	public List<VipAddress> getVipAddress() {
+		return vipAddress;
+	}
+	public void setVipAddress(List<VipAddress> vipAddress) {
+		this.vipAddress = vipAddress;
+	}
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", phone=" + phone + ", role="
 				+ role + ", email=" + email + ", realname=" + realname + ", city=" + city + ", sex=" + sex + ", idcard="
-				+ idcard + ", category=" + category + ", sysopsis=" + sysopsis + ", picturePath=" + picturePath + "]";
+				+ idcard + ", category=" + category + ", sysopsis=" + sysopsis + ", picturePath=" + picturePath
+				+ ", vipAddress=" + vipAddress + "]";
 	}
 }

@@ -79,7 +79,7 @@
 					<img src="${contextPath}/user-picture/${user.picturePath}" width="183" height="169"  class="user-picture"/>
 				</c:when>
 				<c:otherwise>
-					无
+					 <h2 class="headImg"><img src="${contextPath}/assets/images/vipImg.jpg" width="183" height="169" /></h2>
 				</c:otherwise>
 			</c:choose>
    </h2>
@@ -91,7 +91,7 @@
     <dt class="vip_2">账户设置</dt>
      <dd class="ddCur"><a href="#">个人信息</a></dd>
      <dd><a href="${contextPath}/vipPwd">密码修改</a></dd>
-     <dd><a href="vipAddress.jsp">收货地址</a></dd>
+     <dd><a href="${contextPath}/vipAddress">收货地址</a></dd>
      <dd><a href="vipXiaofei.jsp">消费记录</a></dd>
     <dt class="vip_3">客户服务</dt>
      <dd><a href="vipQuxiao.jsp">取消订单/退货</a></dd>
