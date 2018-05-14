@@ -9,5 +9,22 @@
      (vipaddress_seq.nextval,#{user_id},#{zone},#{address},#{code},#{addressee},
      #{mobilephone})    
      </insert>
+     
+     <select id = "findAll" resultType="VipAddress"> 
+        select id,user_id,zone,address,code,addressee,mobilephone from vipaddress 
+         where user_id = #{user_id}
+     </select>
+     
+     <delete id="delete">
+            delete from vipaddress where id = #{id}
+     </delete>
+     
+     <update id="alterAddress">
+         update vipaddress set zone = #{zone},address=#{address},code=#{code},addressee=#{addressee},
+         mobilephone=#{mobilephone} where id = #{id} 
+     </update>
   
+     <select id="findIdOneAddres" resultType="VipAddress">
+             select * from vipaddress where id =#{id}
+     </select>
 </mapper>

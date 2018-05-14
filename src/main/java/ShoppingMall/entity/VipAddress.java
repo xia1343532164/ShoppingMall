@@ -1,7 +1,6 @@
 package ShoppingMall.entity;
 
 public class VipAddress {
-
 	private Integer id ;
 	private Integer user_id;
 	private String zone;//地区

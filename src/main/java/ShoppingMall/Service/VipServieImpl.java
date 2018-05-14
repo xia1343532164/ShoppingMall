@@ -1,5 +1,7 @@
 package ShoppingMall.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -34,6 +36,26 @@ public class VipServieImpl implements VipService {
 	@Override
 	public void addAddress(VipAddress address) {
 		vipDao.addAddress(address);		
+	}
+
+	@Override
+	public List<VipAddress> findAll(Integer id) {
+		return vipDao.findAll(id);
+	}
+
+	@Override
+	public void delete(Integer id) {
+          vipDao.delete(id);		
+	}
+
+	@Override
+	public void alterAddress(VipAddress vipAddress) {
+           vipDao.alterAddress(vipAddress);		
+	}
+
+	@Override
+	public VipAddress findIdOneAddres(Integer id) {
+		return vipDao.findIdOneAddres(id);
 	}
 
 }

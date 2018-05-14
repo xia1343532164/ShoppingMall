@@ -91,10 +91,10 @@
   
   
   <div class="vipRight">
+    <h2 class="vipTitle">收货地址 <span class="green add">[添加]</span></h2>
    <div class="address">
    <form action="${contextPath}/vipAddress" method="post" >
    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-   <h2 class="vipTitle">收货地址</h2>
     <div class="addList">
      <label><span class="red">* </span>选择地区:</label>
      <select name="zone">
@@ -133,7 +133,6 @@
     </div><!--addList2/-->
     </form>
    </div><!--address/-->
-     <p style="color:red;" >${Success}</p>  
    <table class="vipAdress">
     <tr>
      <th>收货人</th>
@@ -143,54 +142,18 @@
      <th>电话/手机</th>
      <th>操作</th>
     </tr>
-    <tr>
-     <td>张益达</td>
-     <td>上海 上海市 普陀区</td>
-     <td>曹杨路1040弄中友大厦一号楼19楼</td>
-     <td>200000</td>
-     <td>13569888523</td>
-     <td><span class="green upd">[修改]</span> | <span class="green add">[添加]</span> </td>
-    </tr>
-    <tr>
-     <td>张大炮</td>
-     <td>上海 上海市 普陀区</td>
-     <td>曹杨路1040弄中友大厦一号楼19楼</td>
-     <td>200000</td>
-     <td>13569888523</td>
-     <td><span class="green upd">[修改]</span> | <span class="green add">[添加]</span> </td>
-    </tr>
-    <tr>
-     <td>李思明</td>
-     <td>上海 上海市 普陀区</td>
-     <td>曹杨路1040弄中友大厦一号楼19楼</td>
-     <td>200000</td>
-     <td>13569888523</td>
-     <td><span class="green upd">[修改]</span> | <span class="green add">[添加]</span> </td>
-    </tr>
-    <tr>
-     <td>成吉思汗</td>
-     <td>上海 上海市 普陀区</td>
-     <td>曹杨路1040弄中友大厦一号楼19楼</td>
-     <td>200000</td>
-     <td>13569888523</td>
-     <td><span class="green upd">[修改]</span> | <span class="green add">[添加]</span> </td>
-    </tr>
-    <tr>
-     <td>忽必烈</td>
-     <td>上海 上海市 普陀区</td>
-     <td>曹杨路1040弄中友大厦一号楼19楼</td>
-     <td>200000</td>
-     <td>13569888523</td>
-     <td><span class="green upd">[修改]</span> | <span class="green add">[添加]</span> </td>
-    </tr>
-    <tr>
-     <td>乾隆</td>
-     <td>上海 上海市 普陀区</td>
-     <td>曹杨路1040弄中友大厦一号楼19楼</td>
-     <td>200000</td>
-     <td>13569888523</td>
-     <td><span class="green upd">[修改]</span> | <span class="green add">[添加]</span> </td>
-    </tr>
+    <c:forEach items="${vipAddress}" var="Address">
+        <tr>
+            <td>${Address.addressee}</td>
+            <td>${Address.zone}</td>
+            <td>${Address.address}</td>
+            <td>${Address.code}</td>
+            <td>${Address.mobilephone}</td>
+            <td><a href="${contextPath}/vipAddress/${Address.id}/alter" class="green upd">[修改]</a>
+                 <a href="${contextPath}/vipAddress/${Address.id}/delete" class="green">[删除]</a>
+            </td>
+        </tr>
+    </c:forEach>
    </table><!--vipAdress/-->
   </div><!--vipRight/-->
   <div class="clears"></div>

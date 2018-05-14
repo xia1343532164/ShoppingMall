@@ -1,6 +1,7 @@
 package ShoppingMall.controller;
 
 import java.io.File;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -66,6 +68,7 @@ public class VipController {
 		/*}*/
 	     	return "vip";
 	}
+	//密码修改
 	@RequestMapping(method=RequestMethod.GET,value="/vipPwd")
 	public String vippwd(){
 		return "vipPwd";
@@ -84,15 +87,39 @@ public class VipController {
 		}
 		return "vipPwd";
 	}
+	//地址添加
 	@RequestMapping(method=RequestMethod.GET,value="/vipAddress")
-	public String vipAddress(){
+	public String vipAddress(@AuthenticationPrincipal(expression="user")User user ,Model model){
+		 List<VipAddress> vipAddress = vipService.findAll(user.getId());
+     	model.addAttribute("vipAddress", vipAddress);
 		return "vipAddress";
 }
+	
 	@RequestMapping(method=RequestMethod.POST,value="/vipAddress")
-   public String AddressAdd(@AuthenticationPrincipal(expression="user")User user, @ModelAttribute VipAddress address,Model model){
+   public String AddressAdd(@AuthenticationPrincipal(expression="user")User user, @ModelAttribute VipAddress address){
 		address.setUser_id(user.getId());
 		vipService.addAddress(address);
-	     model.addAttribute("Success","添加地址成功");
-		return "vipAddress";
+		return "redirect:/vipAddress";
    }	
+	//删除
+	@RequestMapping(method=RequestMethod.GET,value="/vipAddress/{id}/delete")
+	public String AddressDelete(@PathVariable int id ){
+		vipService.delete(id);
+		return "redirect:/vipAddress";
+	}
+	
+	//修改
+	@RequestMapping(method=RequestMethod.GET,value="/vipAddress/{id}/alter")
+	public String AddressAlter( @PathVariable Integer id,Model model){
+		VipAddress address = vipService.findIdOneAddres(id);
+		model.addAttribute("address", address);
+		return "vipAddressAlter";
+	}
+	
+	@RequestMapping(method=RequestMethod.POST,value="/vipAddress/{id}/alter")
+	public String alter(@ModelAttribute VipAddress vipAddress ,@PathVariable Integer id ){
+		vipAddress.setId(id);
+		vipService.alterAddress(vipAddress);		
+		return "redirect:/vipAddress";
+	}
 }
