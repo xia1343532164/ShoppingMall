@@ -14,9 +14,9 @@
 </head>
 
 <body>
- <div class="hrader">
-  <span style="color:#FD7306;margin-left:20px;">欢迎您：<sec:authentication property="principal.user.username"/></span>
-  <%-- <a href="${contextPath}/register">注册</a> --%>
+   <div class="hrader" id="header">
+  <a href="${contextPath}/login" style="color:#FD7306;margin-left:20px;">请登录</a> 
+  <a href="${contextPath}/register">注册</a>
   <div class="topNav">
    <a href="${contextPath}/index" style="color:#FD7306;">首页</a>
    <a href="buy.jsp">买家</a>
@@ -31,7 +31,7 @@
   </div><!--topNav/-->
  </div><!--hrader/-->
  <div class="inCont">
-  <h1 class="logo"><a href="index.jsp"><img src="${contextPath}/assets/images/logo.png" width="304" height="74" /></a></h1>
+  <h1 class="logo"><a href="${contextPath}/index"><img src="${contextPath}/assets/images/logo.png" width="304" height="74" /></a></h1>
   <form class="select" action="${contextPath}/prolist" method="get">
    <div>
     <input type="text" value="请输入你需要的产品" class="selName" onFocus=OnEnter(this) onBlur=OnExit(this) />
@@ -39,7 +39,7 @@
    </div>
   </form><!--select/-->
   <div class="ban">
-   <a href="prolist.jsp"><img src="${contextPath}/assets/images/phone.png" /></a>
+   <a href="${contextPath}/prolist"><img src="${contextPath}/assets/images/phone.png" /></a>
   </div><!--ban/-->
  </div><!--inCont/-->
  <div class="footer">
