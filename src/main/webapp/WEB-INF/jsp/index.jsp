@@ -15,8 +15,7 @@
 
 <body>
  <div class="hrader" id="header">
-  <a href="${contextPath}/login" style="color:#FD7306;margin-left:20px;">请登录</a> 
-  <a href="${contextPath}/register">注册</a>
+      <%@ include file="header.jspf" %>
   <div class="topNav">
    <a href="${contextPath}/index" style="color:#FD7306;">首页</a>
    <a href="buy.jsp">买家</a>

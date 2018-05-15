@@ -16,8 +16,7 @@
 <body>
  <div class="hrader" id="header">
   <div class="top">
-   <a href="${contextPath}/login" style="color:#C94E13;">请登录</a> 
-   <a href="${contextPath}/register">注册</a>
+    <%@include file="header.jspf" %>
    <ul class="topNav">
      <li><a href="order.html">我的订单 </a></li>
     <li class="gouwuche"><a href="car.html">购物车</a> <strong style="color:#C94E13;">3</strong></li>
@@ -25,7 +24,7 @@
     <li class="kefus"><a href="#">联系客服</a></li>
     <li><a href="#" class="lan">中文</a></li>
     <li><a href="#" class="lan">English</a></li>
-    <div class="clears"></div>
+    <div class="clears">	</div>
    </ul><!--topNav/-->
   </div><!--top/-->
  </div><!--hrader/-->
@@ -61,7 +60,7 @@
    <li><a href="${contextPath}/index">首页</a></li>
    <li><a href="buy.html">买家</a></li>
    <li><a href="sell.html">卖家</a></li>
-   <li><a href="vip.html">会员中心</a></li>
+   <li><a href="${contextPath}/vipinfo">会员中心</a></li>
    <li><a href="xuanshang.html">悬赏榜</a></li>
    <li><a href="luntan.html" class="luntan">论坛</a></li>
    <li><a href="help.html">帮助</a></li>
@@ -104,7 +103,7 @@
       <span class="duoxuan">
        多选
       </span><!--duoxuan/-->
-      <input type="image" src="images/queding.png" class="queen2" />
+      <input type="image" src="${contextPath}/assets/images/queding.png" class="queen2" />
       <div class="more-shou">
        <span class="more">
         更多 &gt;
@@ -139,7 +138,7 @@
       <span class="duoxuan">
        多选
       </span><!--duoxuan/-->
-      <input type="image" src="images/queding.png" class="queen2" />
+      <input type="image" src="${contextPath}/assets/images/queding.png" class="queen2" />
       <div class="more-shou">
        <span class="more">
         更多 &gt;
@@ -169,7 +168,7 @@
       <div class="jiage">
        <input type="text" />&nbsp;-&nbsp;
        <input type="text" />&nbsp;
-       <input type="image" src="images/queding.png" class="queen" />
+       <input type="image" src="${contextPath}/assets/images/queding.png" class="queen" />
       </div><!--jiage/-->
      </div>
     </td>
@@ -483,7 +482,7 @@
   </ul><!--proSelect/-->
   <div class="phoneBox">
    <dl>
-    <dt><a href="buyinfo.html"><img src="${contextPath}/assets/images/phone5.png" /></a></dt>
+    <dt><a href="buyinfo.jsp"><img src="${contextPath}/assets/images/phone5.png" /></a></dt>
     <dd>
      <h3>￥4800.00</h3>
      <div class="phonePars">
@@ -495,7 +494,7 @@
      </div><!--xiaoliang/-->
      <div class="jiaru-shoucang">
       <span class="jiaruCar">加入购物车</span>
-      <span class="shoucangCar"><a href="${contextPath}/assets/quanjing/index.html">选用此模型</a></span>>
+      <span class="shoucangCar"><a href="${contextPath}/assets/quanjing/index.jsp">选用此模型</a></span>>
       <div class="clears"></div>
      </div><!--jiaru-shoucang/-->
     </dd>

@@ -18,9 +18,7 @@
 <body>
  <div class="hrader" id="header">
   <div class="top">
-  <span style="color:#FD7306;margin-left:20px;">欢迎您：<sec:authentication property="principal.user.username"/></span>
-<!--    <a href="login.jsp" style="color:#C94E13;">请登录</a> 
-   <a href="reg.jsp">注册</a> -->
+     <%@ include file="header.jspf" %>
    <ul class="topNav">
     <li><a href="order.jsp">我的订单 </a></li>
     <li class="gouwuche"><a href="car.jsp">购物车</a> <strong style="color:#C94E13;">3</strong></li>

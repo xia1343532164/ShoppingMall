@@ -13,8 +13,11 @@ public class GoodsController {
 	}
 	//商品列表展示
 	@RequestMapping(method=RequestMethod.GET,value="/prolist")
-	public String prolist(){
+	public String prolist( ){
 		return "prolist";
 	}
-
+	@RequestMapping(method=RequestMethod.GET,value="/buyinfo")
+    public String buyinfo(){
+    	return "buyinfo";
+    }
 }

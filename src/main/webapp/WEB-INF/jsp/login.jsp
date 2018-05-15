@@ -36,13 +36,21 @@
   <div class="loginBox">
    <div class="loginLeft">
     <img src="${contextPath}/assets/images/login.jpg" width="567" height="348" />
+    
    </div><!--loginLeft/-->
+  
    <div class="loginRight">
+    
     <form class="login" action="" method="post">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
     <c:if test="${param.error!=null }">
 <h4 style="color:red;">登录失败，账号或密码错误</h4>
-</c:if>
+    </c:if>
+      <c:if test="${param.logout!=null}">
+           <h4 style="color:blue;">已退出系统</h4>
+     </c:if>
+     
      <label>邮箱/用户名/已验证手机</label>
      <input type="text" class="username" id ="username" name="username"/>
      <label>密码</label>
