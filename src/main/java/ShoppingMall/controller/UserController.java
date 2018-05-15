@@ -51,9 +51,14 @@ public class UserController {
 		}
 		return "redirect:/login";
 	}
+	
 	@RequestMapping(method=RequestMethod.GET,value="/index")
 	public String index(@AuthenticationPrincipal(expression = "user") User curuser ){
 		System.out.println(curuser);
 		return "index";
+	}
+	@RequestMapping(method=RequestMethod.GET,value="/prolist")
+	public String prolist(){
+		return "prolist";
 	}
 }

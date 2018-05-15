@@ -61,10 +61,10 @@
  </div><!--mid-->
  <div class="navBox navBg3">
   <ul class="nav">
-   <li><a href="index.jsp">首页</a></li>
+   <li><a href="${contextPath}/index">首页</a></li>
    <li><a href="buy.jsp">买家</a></li>
    <li><a href="sell.jsp">卖家</a></li>
-   <li class="navCur"><a href="vip.jsp">会员中心</a></li>
+   <li class="navCur"><a href="${contextPath}/vipinfo">会员中心</a></li>
    <li><a href="xuanshang.jsp">悬赏榜</a></li>
    <li><a href="luntan.jsp" class="luntan">论坛</a></li>
    <li><a href="help.jsp">帮助</a></li>

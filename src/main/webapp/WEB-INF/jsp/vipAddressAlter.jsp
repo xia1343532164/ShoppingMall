@@ -153,13 +153,12 @@
 						<br><br><br>
 					邮政编码:&emsp;<input type="text" name="code" class="form-control" value="${address.code }" />
 						<br><br><br>
-				        收件人:&emsp;&emsp;<input type="text" name="addressee" class="form-control" value="${address.addressee }">
+				            收件人:&emsp;&emsp;<input type="text" name="addressee" class="form-control" value="${address.addressee }">
 				        	<br><br><br>
-					手机号码:&emsp;<input type="text" name="mobilephone"  class="form-control" value="${address.mobilephone }"/> 或者固定电话 <input
-						type="text" name="mobilephone"  class="form-control"/> 
+					手机号码:&emsp;<input type="text" name="mobilephone"  class="form-control" value="${address.mobilephone }"/> 
+					或者固定电话  <input type="text" name="mobilephone"  class="form-control"/> 
 						<br><br><br>
-							<input name="" value=" 确 认 "
-						type="submit"  class="btn btn-default"/>
+					 <input name="" value=" 确 认 " type="submit"  class="btn btn-default"/>
 			</div>
 				</form>
 			<!--address/-->
