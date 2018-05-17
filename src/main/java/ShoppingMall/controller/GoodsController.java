@@ -11,11 +11,14 @@ public class GoodsController {
 	public String index(){
 		return "index";
 	}
+	
 	//商品列表展示
 	@RequestMapping(method=RequestMethod.GET,value="/prolist")
 	public String prolist( ){
 		return "prolist";
 	}
+	
+	//商品详情展示
 	@RequestMapping(method=RequestMethod.GET,value="/buyinfo")
     public String buyinfo(){
     	return "buyinfo";

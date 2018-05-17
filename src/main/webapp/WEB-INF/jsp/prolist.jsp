@@ -482,7 +482,7 @@
   </ul><!--proSelect/-->
   <div class="phoneBox">
    <dl>
-    <dt><a href="buyinfo.jsp"><img src="${contextPath}/assets/images/phone5.png" /></a></dt>
+    <dt><a href="${contextPath}/buyinfo"><img src="${contextPath}/assets/images/phone5.png" /></a></dt>
     <dd>
      <h3>￥4800.00</h3>
      <div class="phonePars">
@@ -500,7 +500,7 @@
     </dd>
    </dl>
    <dl>
-    <dt><a href="buyinfo.html"><img src="${contextPath}/assets/images/phone4.png" /></a></dt>
+    <dt><a href="${contextPath}/buyinfo"><img src="${contextPath}/assets/images/phone4.png" /></a></dt>
     <dd>
      <h3>￥4800.00</h3>
      <div class="phonePars">
@@ -518,7 +518,7 @@
     </dd>
    </dl>
    <dl>
-    <dt><a href="buyinfo.html"><img src="${contextPath}/assets/images/phone3.png" /></a></dt>
+    <dt><a href="${contextPath}/buyinfo"><img src="${contextPath}/assets/images/phone3.png" /></a></dt>
     <dd>
      <h3>￥4800.00</h3>
      <div class="phonePars">

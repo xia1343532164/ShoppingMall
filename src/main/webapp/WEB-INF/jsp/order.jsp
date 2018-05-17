@@ -14,14 +14,14 @@
 <body>
  <div class="hrader" id="header">
   <div class="top">
-   <a href="login.html" style="color:#C94E13;">è¯·ç»å½</a> 
-   <a href="reg.html">æ³¨å</a>
+   <a href="login.html" style="color:#C94E13;">请登录</a> 
+   <a href="reg.html">注册</a>
    <ul class="topNav">
-    <li><a href="order.html">æçè®¢å </a></li>
-    <li class="gouwuche"><a href="car.html">è´­ç©è½¦</a> <strong style="color:#C94E13;">3</strong></li>
-    <li class="shoucangjia"><a href="shoucang.html">æ¶èå¤¹</a></li>
-    <li class="kefus"><a href="#">èç³»å®¢æ</a></li>
-<li><a href="#" class="lan">ä¸­æ</a></li>
+    <li><a href="order.html">我的订单 </a></li>
+    <li class="gouwuche"><a href="car.html">购物车</a> <strong style="color:#C94E13;">3</strong></li>
+    <li class="shoucangjia"><a href="shoucang.html">收藏夹</a></li>
+    <li class="kefus"><a href="#">联系客服</a></li>
+<li><a href="#" class="lan">中文</a></li>
     <li><a href="#" class="lan">English</a></li>
     <div class="clears"></div>
    </ul><!--topNav/-->
@@ -36,9 +36,9 @@
     <input type="text" class="subText" />
     <input type="image" src="images/sub.jpg" width="95" height="32" class="subImg" />
     <div class="hotci">
-    <a href="#">é·æ´¾å¤§ç¥</a>
-    <a href="#">ä¸æs5</a>
-    <a href="#">è¯ºåºäº1020</a>
+    <a href="#">酷派大神</a>
+    <a href="#">三星s5</a>
+    <a href="#">诺基亚1020</a>
     <a href="#">Iphone 6</a>
     <a href="#">htc one</a>
    </div><!--hotci/-->
@@ -56,13 +56,13 @@
  </div><!--mid-->
  <div class="navBox navBg3">
   <ul class="nav">
-   <li><a href="index.html">é¦é¡µ</a></li>
-   <li><a href="buy.html">ä¹°å®¶</a></li>
-   <li><a href="sell.html">åå®¶</a></li>
-   <li><a href="vip.html">ä¼åä¸­å¿</a></li>
-   <li><a href="xuanshang.html">æ¬èµæ¦</a></li>
-   <li><a href="luntan.html" class="luntan">è®ºå</a></li>
-   <li class="navCur"><a href="help.html">å¸®å©</a></li>
+   <li><a href="index.html">首页</a></li>
+   <li><a href="buy.html">买家</a></li>
+   <li><a href="sell.html">卖家</a></li>
+   <li><a href="vip.html">会员中心</a></li>
+   <li><a href="xuanshang.html">悬赏榜</a></li>
+   <li><a href="luntan.html" class="luntan">论坛</a></li>
+   <li class="navCur"><a href="help.html">帮助</a></li>
    <div class="clears"></div>
   </ul><!--nav/-->
  </div><!--navBox/-->
@@ -70,12 +70,12 @@
   <div class="cont">
    <div class="carImg"><img src="images/car2.jpg" width="961" height="27" /></div>
    
-   <h4 class="orderTitle">æ¯ä»æ¹å¼</h4>
+   <h4 class="orderTitle">支付方式</h4>
    <ul class="zhiList">
-   <li>ç½é¶æ¯ä»-åè®°å¡</li>
-   <li>ç½é¶æ¯ä»-ä¿¡ç¨å¡</li>
-   <li>è´¢ä»é-ä½é¢æ¯ä»</li>
-   <li>æ¯ä»å®-ä½é¢æ¯ä»</li>
+   <li>网银支付-借记卡</li>
+   <li>网银支付-信用卡</li>
+   <li>财付通-余额支付</li>
+   <li>支付宝-余额支付</li>
    <div class="clears"></div>
   </ul><!--zhiList/-->
   <div class="zhifufangshi">
@@ -128,42 +128,42 @@
     <div class="clear"></div>
    </ul>
   </div><!--zhzhifufangshii/-->
-  <h4 class="orderTitle">è´­ç©æ¸å</h4>
+  <h4 class="orderTitle">购物清单</h4>
   <table class="orderList">
     <tr>
      <th width="20"></th>
-     <th width="430">åå</th>
-     <th width="135">åä»·</th>
-     <th width="135">æ°é</th>
-     <th width="135">æ»éé¢</th>
-     <th>æä½</th>
+     <th width="430">商品</th>
+     <th width="135">单价</th>
+     <th width="135">数量</th>
+     <th width="135">总金额</th>
+     <th>操作</th>
     </tr>
     <tr>
      <td><input type="checkbox" /></td>
      <td>
       <dl>
        <dt><a href="proinfo.html"><img src="images/pro1.jpg" width="85" height="85" /></a></dt>
-       <dd>å¨çæå¤§çä¸­ææç´¢å¼æãè´åäºè®©ç½æ°æ´ä¾¿æ·<br /><span class="red">æè´§ï¼</span>ä»ä¸æµ·åºå</dd>
+       <dd>全球最大的中文搜索引擎、致力于让网民更便捷<br /><span class="red">有货：</span>从上海出发</dd>
        <div class="clears"></div>
       </dl>
      </td>
-     <td><strong class="red">ï¿¥70.20</strong></td>
+     <td><strong class="red">￥70.20</strong></td>
      <td>
      <div class="a" class="Spinner"></div>
      </td>
-     <td><strong class="red">ï¿¥70.20</strong></td>
-     <td><a href="#" class="green">æ¶è</a><br /><a href="#" class="green">å é¤</a></td>
+     <td><strong class="red">￥70.20</strong></td>
+     <td><a href="#" class="green">收藏</a><br /><a href="#" class="green">删除</a></td>
     </tr>
     <tr>
      <td><input type="checkbox" /></td>
      <td>
       <dl>
        <dt><a href="proinfo.html"><img src="images/pro1.jpg" width="85" height="85" /></a></dt>
-       <dd>å¨çæå¤§çä¸­ææç´¢å¼æãè´åäºè®©ç½æ°æ´ä¾¿æ·<br /><span class="red">æè´§ï¼</span>ä»ä¸æµ·åºå</dd>
+       <dd>全球最大的中文搜索引擎、致力于让网民更便捷<br /><span class="red">有货：</span>从上海出发</dd>
        <div class="clears"></div>
       </dl>
      </td>
-     <td><strong class="red">ï¿¥70.20</strong></td>
+     <td><strong class="red">￥70.20</strong></td>
      <td>
      <div class="jia_jian">
       <img src="images/jian.jpg" width="21" height="25" class="jian" />
@@ -171,19 +171,19 @@
       <img src="images/jia.jpg" width="21" height="25" class="jia" />
      </div>
      </td>
-     <td><strong class="red">ï¿¥70.20</strong></td>
-     <td><a href="#" class="green">æ¶è</a><br /><a href="#" class="green">å é¤</a></td>
+     <td><strong class="red">￥70.20</strong></td>
+     <td><a href="#" class="green">收藏</a><br /><a href="#" class="green">删除</a></td>
     </tr>
     <tr>
      <td><input type="checkbox" /></td>
      <td>
       <dl>
        <dt><a href="proinfo.html"><img src="images/pro1.jpg" width="85" height="85" /></a></dt>
-       <dd>å¨çæå¤§çä¸­ææç´¢å¼æãè´åäºè®©ç½æ°æ´ä¾¿æ·<br /><span class="red">æè´§ï¼</span>ä»ä¸æµ·åºå</dd>
+       <dd>全球最大的中文搜索引擎、致力于让网民更便捷<br /><span class="red">有货：</span>从上海出发</dd>
        <div class="clears"></div>
       </dl>
      </td>
-     <td><strong class="red">ï¿¥70.20</strong></td>
+     <td><strong class="red">￥70.20</strong></td>
      <td>
      <div class="jia_jian">
       <img src="images/jian.jpg" width="21" height="25" class="jian" />
@@ -191,19 +191,19 @@
       <img src="images/jia.jpg" width="21" height="25" class="jia" />
      </div>
      </td>
-     <td><strong class="red">ï¿¥70.20</strong></td>
-     <td><a href="#" class="green">æ¶è</a><br /><a href="#" class="green">å é¤</a></td>
+     <td><strong class="red">￥70.20</strong></td>
+     <td><a href="#" class="green">收藏</a><br /><a href="#" class="green">删除</a></td>
     </tr>
     <tr>
      <td><input type="checkbox" /></td>
      <td>
       <dl>
        <dt><a href="proinfo.html"><img src="images/pro1.jpg" width="85" height="85" /></a></dt>
-       <dd>å¨çæå¤§çä¸­ææç´¢å¼æãè´åäºè®©ç½æ°æ´ä¾¿æ·<br /><span class="red">æè´§ï¼</span>ä»ä¸æµ·åºå</dd>
+       <dd>全球最大的中文搜索引擎、致力于让网民更便捷<br /><span class="red">有货：</span>从上海出发</dd>
        <div class="clears"></div>
       </dl>
      </td>
-     <td><strong class="red">ï¿¥70.20</strong></td>
+     <td><strong class="red">￥70.20</strong></td>
      <td>
      <div class="jia_jian">
       <img src="images/jian.jpg" width="21" height="25" class="jian" />
@@ -211,28 +211,28 @@
       <img src="images/jia.jpg" width="21" height="25" class="jia" />
      </div>
      </td>
-     <td><strong class="red">ï¿¥70.20</strong></td>
-     <td><a href="#" class="green">æ¶è</a><br /><a href="#" class="green">å é¤</a></td>
+     <td><strong class="red">￥70.20</strong></td>
+     <td><a href="#" class="green">收藏</a><br /><a href="#" class="green">删除</a></td>
     </tr>
     <tr>
-     <td colspan="6"><div class="shanchu"><img src="images/lajio.jpg" /> å¨é¨å é¤</div></td>
+     <td colspan="6"><div class="shanchu"><img src="images/lajio.jpg" /> 全部删除</div></td>
     </tr>
    </table><!--orderList/-->
    <table class="zongjia" align="right">
     <tr>
-     <td width="120" align="left">ååæ»ä»·ï¼</td>
+     <td width="120" align="left">商品总价：</td>
      <td width="60"><strong class="red">+7.88</strong></td>
     </tr>
     <tr>
-     <td width="120" align="left">è¿è´¹æ»é¢ï¼</td>
+     <td width="120" align="left">运费总额：</td>
      <td><strong class="red">+121.88</strong></td>
     </tr>
     <tr>
-     <td width="120" align="left">ä¿éä¼æ ï¼</td>
+     <td width="120" align="left">促销优惠：</td>
      <td><strong class="red">+341.88</strong></td>
     </tr>
     <tr>
-     <td width="120" align="left">åè®¡ï¼</td>
+     <td width="120" align="left">合计：</td>
      <td><strong class="red">+2271.88</strong></td>
     </tr>
     <tr>
@@ -250,48 +250,48 @@
     <a href="index.html"><img src="images/ftlogo.jpg" width="240" height="64" /></a>
     <h3 class="ftphone">400 000 0000 </h3>
     <div class="ftKe">
-     å®¢æ 7x24å°æ¶(å¨å¹´æ ä¼)<br />
-     <span>å®¢æé®ç®±ï¼kefu@webqin.net </span>
+     客服 7x24小时(全年无休)<br />
+     <span>客服邮箱：kefu@webqin.net </span>
     </div><!--ftKe/-->
    </div><!--footersLeft/-->
    <div class="footersRight">
     <ul>
-     <li class="ftTitle">æ°ææå</li>
-     <li><a href="#">è´­ç©æµç¨</a></li>
-     <li><a href="#">ä¼åè®¡åååå</a></li>
-     <li><a href="#">ä¼æ å¸è§å</a></li>
-     <li><a href="#">èç³»å®¢æ</a></li>
-     <li><a href="#">å¸¸è§é®é¢</a></li>
+     <li class="ftTitle">新手指南</li>
+     <li><a href="#">购物流程</a></li>
+     <li><a href="#">会员计划及划分</a></li>
+     <li><a href="#">优惠券规则</a></li>
+     <li><a href="#">联系客服</a></li>
+     <li><a href="#">常见问题</a></li>
     </ul>
     <ul>
-     <li class="ftTitle">ä»æ¬¾æ¹å¼</li>
-     <li><a href="#">å¨çº¿æ¯ä»</a></li>
-     <li><a href="#">ç¤¼åå¡æ¯ä»</a></li>
-     <li><a href="#">è´§å°ä»æ¬¾</a></li>
-     <li><a href="#">é¶è¡ä»æ¬¾</a></li>
+     <li class="ftTitle">付款方式</li>
+     <li><a href="#">在线支付</a></li>
+     <li><a href="#">礼品卡支付</a></li>
+     <li><a href="#">货到付款</a></li>
+     <li><a href="#">银行付款</a></li>
     </ul>
     <ul>
-     <li class="ftTitle">ééæå¡</li>
-     <li><a href="#">ééæ¶æåè¿è´¹</a></li>
-     <li><a href="#">è¶æ¶èµä»</a></li>
-     <li><a href="#">éªè´§ä¸ç­¾æ¶</a></li>
-     <li><a href="#">éè´§ä¿¡æ¯è·è¸ª</a></li>
+     <li class="ftTitle">配送服务</li>
+     <li><a href="#">配送时效及运费</a></li>
+     <li><a href="#">超时赔付</a></li>
+     <li><a href="#">验货与签收</a></li>
+     <li><a href="#">配货信息跟踪</a></li>
     </ul>
     <ul>
-     <li class="ftTitle">å®åæå¡</li>
-     <li><a href="#">éæ¢è´§æ¿ç­</a></li>
-     <li><a href="#">éæ¢è´§åºå</a></li>
-     <li><a href="#">éæ¬¾æ¶é</a></li>
-     <li><a href="#">åè¡èµä»</a></li>
-     <li><a href="#">åç¥¨è¯´æ</a></li>
+     <li class="ftTitle">售后服务</li>
+     <li><a href="#">退换货政策</a></li>
+     <li><a href="#">退换货区域</a></li>
+     <li><a href="#">退款时限</a></li>
+     <li><a href="#">先行赔付</a></li>
+     <li><a href="#">发票说明</a></li>
     </ul>
     <ul>
-     <li class="ftTitle">ç¹è²æå¡</li>
-     <li><a href="#">ç¤¼åå¡</a></li>
-     <li><a href="#">äº§åè¯ç¨</a></li>
-     <li><a href="#">è±ç²ä¸­å¿</a></li>
-     <li><a href="#">å¿«éè´­ç©</a></li>
-     <li><a href="#">æ¨èå¥½å</a></li>
+     <li class="ftTitle">特色服务</li>
+     <li><a href="#">礼品卡</a></li>
+     <li><a href="#">产品试用</a></li>
+     <li><a href="#">花粉中心</a></li>
+     <li><a href="#">快速购物</a></li>
+     <li><a href="#">推荐好友</a></li>
     </ul>
     
     <div class="clears"></div>
@@ -300,12 +300,12 @@
   </div><!--footers/-->
  </div><!--footBox/-->
  <div class="footer" style="text-align:left;">
-  <a href="#">å³äºæä»¬</a>
-  <a href="#">åæé¾æ¥</a>
-  <a href="#">çæå£°æ</a>
-  <a href="#">ç½ç«å°å¾</a>
+  <a href="#">关于我们</a>
+  <a href="#">友情链接</a>
+  <a href="#">版权声明</a>
+  <a href="#">网站地图</a>
   <br />
-  <span>&copy; 2014 Unqezi ä½¿ç¨åå¿è¯» æ²ªICPå¤ 12007626å·-1</span>
+  <span>&copy; 2014 Unqezi 使用前必读 沪ICP备 12007626号-1</span>
  </div><!--footer/-->
 </body>
 </html>
