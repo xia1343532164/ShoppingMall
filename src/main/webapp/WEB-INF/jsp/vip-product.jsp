@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>unique</title>
 <link type="text/css" href="${contextPath}/assets/css/css.css" rel="stylesheet" />
+<link type="text/css" href="${contextPath}/assets/css/css/app.css">
 <script type="text/javascript" src="${contextPath}/assets/js/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="${contextPath}/assets/js/js.js"></script>
 
@@ -95,6 +96,7 @@
     <tr>
      <th>手机图片</th>
      <td><input type="file" name="picture" /></td>
+     <form name="picture" cssClass="field-error"></form>
     </tr>
     <tr>
      <th>手机分类</th>

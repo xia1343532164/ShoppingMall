@@ -1,22 +1,24 @@
 package ShoppingMall.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ShoppingMall.Dao.SellerDao;
+import ShoppingMall.Dao.CommodityDao;
 import ShoppingMall.entity.Commodity;
 
 @Service
 @Transactional
-public class SellerServiceImpl implements SellerService {
+public class CommodityServiceImpl implements CommodityService {
 
 	@Autowired
-	private  SellerDao sellerDao;
+	private CommodityDao commodityDao;
 	
 	@Override
-	public void addCommodity(Commodity commodity) {
-          sellerDao.addCommodity(commodity);
+	public List<Commodity> findAll() {
+		return commodityDao.findAll();
 	}
 
 }

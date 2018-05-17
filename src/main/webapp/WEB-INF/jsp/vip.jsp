@@ -74,7 +74,7 @@
    <h2 class="headImg">
    <c:choose>
 				<c:when test="${user.picturePath != null}">
-					<img src="${contextPath}/user-picture/${user.picturePath}" width="183" height="169"  class="user-picture"/>
+					<img src="${contextPath}/user-picture/${user.picturePath}" width="183" height="169"  />
 				</c:when>
 				<c:otherwise>
 					 <h2 class="headImg"><img src="${contextPath}/assets/images/vipImg.jpg" width="183" height="169" /></h2>

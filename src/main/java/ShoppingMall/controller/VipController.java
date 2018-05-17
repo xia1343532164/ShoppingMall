@@ -37,7 +37,6 @@ public class VipController {
 	@RequestMapping(method=RequestMethod.GET,value="/vipinfo")
 	public String vipinfo(@AuthenticationPrincipal(expression = "user") User user1,Model model){
 		model.addAttribute("user", user1);
-		System.out.println(user1);
 		return "vip";
 	}
 
@@ -50,23 +49,21 @@ public class VipController {
 					!user.getPicture().getContentType().toLowerCase().startsWith("image/")){
 			      bindingResult.rejectValue("picture", "formError.pictureRequired", "请选择照片");	
 			}
-	     	if(bindingResult.hasErrors()){
+	  /*   	if(bindingResult.hasErrors()){
 			       return "vip";
-		}
+		}*/
 		    //把我登录的id设进表单，得到要改的id
-	     	user.setId(user1.getId());
 	     	//TODO
+	     	user.setId(user1.getId());
 	     	String filename = user.getPicture().getOriginalFilename();
 	        String newFileName = String.valueOf(System.currentTimeMillis())+filename;
             user.getPicture().transferTo(new File(uploadDir,newFileName));
             user.setPicturePath(newFileName);
- 	     	System.out.println(user);
 			vipService.saveinfo(user);
 			
 			// RedirectAttributes同时还可以作为Model用(addAttribute)，添加flash属性必须用addFlashAttribute
 			 redirectAttributes.addFlashAttribute("save");
-		/*}*/
-	     	return "vip";
+	     	  return "vip";
 	}
 	//密码修改
 	@RequestMapping(method=RequestMethod.GET,value="/vipPwd")

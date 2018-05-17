@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ShoppingMall.Dao.VipDao;
 import ShoppingMall.entity.User;
 import ShoppingMall.entity.VipAddress;
 
 @Service
+@Transactional
 public class VipServieImpl implements VipService {
 
 	private VipDao vipDao;
@@ -25,6 +27,7 @@ public class VipServieImpl implements VipService {
 
 	@Override
 	public void saveinfo(User user) {
+		System.out.println(user+"111111");
 		 vipDao.saveinfo(user);		
 	}
 	@Override

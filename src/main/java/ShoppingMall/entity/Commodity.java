@@ -63,8 +63,6 @@ public class Commodity {
 	@Override
 	public String toString() {
 		return "Commodity [id=" + id + ", title=" + title + ", picturePath=" + picturePath + ", classify=" + classify
-				+ ", price=" + price + ", stock=" + stock + ", introduce=" + introduce + "]";
+				+ ", price=" + price + ", stock=" + stock + ", introduce=" + introduce + ", picture=" + picture + "]";
 	}
-    
-    
 }

@@ -480,8 +480,28 @@
    <li>价格 &darr;</li>
    <div class="clears"></div>
   </ul><!--proSelect/-->
-  <div class="phoneBox">
-   <dl>
+  <div class="phoneBox">'
+<c:forEach items="${commodity }" var="commodity">
+ <dl>
+    <dt><a href="${contextPath}/buyinfo"><img src="${contextPath}/pro-picture/${commodity.picturePath}" /></a></dt>
+    <dd>
+     <h3>￥${commodity.price}</h3>
+     <div class="phonePars">
+          ${commodity.introduce }
+     </div><!--phonePar/-->
+     <div class="xiaoliang">
+      <span class="blue">157451条评价</span>
+      <span class="pad">上海有货</span>
+     </div><!--xiaoliang/-->
+     <div class="jiaru-shoucang">
+      <span class="jiaruCar">加入购物车</span>
+      <span class="shoucangCar"><a href="${contextPath}/assets/quanjing/index.jsp">选用此模型</a></span>>
+      <div class="clears"></div>
+     </div><!--jiaru-shoucang/-->
+    </dd>
+   </dl>
+</c:forEach>
+   <%-- <dl>
     <dt><a href="${contextPath}/buyinfo"><img src="${contextPath}/assets/images/phone5.png" /></a></dt>
     <dd>
      <h3>￥4800.00</h3>
@@ -840,10 +860,10 @@
       <div class="clears"></div>
      </div><!--jiaru-shoucang/-->
     </dd>
-   </dl>
-   <div class="clears"></div>
+   </dl> --%>
+   <div class="clears"></div> 
   </div><!--phoneBox/-->
- </form><!--proDingzhi/-->
+ </form><!--proDingzhi/--> 
  <div class="footBox">
   <div class="footers">
    <div class="footersLeft">

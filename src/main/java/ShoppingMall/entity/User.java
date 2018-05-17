@@ -31,12 +31,9 @@ public class User {
 	private String email;
 	
 	private String realname;
-	
 	private String city;
-	
 	private String sex;
 	private String idcard;
-	
 	private String category;
 	private String sysopsis;
 	private MultipartFile picture;
