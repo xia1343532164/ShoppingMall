@@ -19,4 +19,9 @@ public class CommodityDaoImpl implements CommodityDao {
 		return commodityMapper.findAll();
 	}
 
+	@Override
+	public Commodity findOne(Integer id) {
+		return commodityMapper.findOne(id);
+	}
+
 }

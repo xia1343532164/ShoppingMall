@@ -72,24 +72,25 @@
   <div class="buyDtl">
    <div class="buyDtlLeft">
     <div class="buyimgBig">
+    <img src="${contextPath}/pro-picture/${commodity.picturePath}" width="360" height="360" /></a>
+     <%-- <img src="${contextPath}/assets/images/buyinfo1.jpg" width="360" height="360" />
      <img src="${contextPath}/assets/images/buyinfo1.jpg" width="360" height="360" />
      <img src="${contextPath}/assets/images/buyinfo1.jpg" width="360" height="360" />
      <img src="${contextPath}/assets/images/buyinfo1.jpg" width="360" height="360" />
-     <img src="${contextPath}/assets/images/buyinfo1.jpg" width="360" height="360" />
-     <img src="${contextPath}/assets/images/buyinfo1.jpg" width="360" height="360" />
+     <img src="${contextPath}/assets/images/buyinfo1.jpg" width="360" height="360" /> --%>
     </div><!--buyimgBig/-->
     <ul class="buyimgsmall">
-     <li><img src="${contextPath}/assets/images/buyinfo-s1.jpg" width="50" height="50" /></li>
-     <li><img src="${contextPath}/assets/images/buyinfo-s2.jpg" width="50" height="50" /></li>
-     <li><img src="${contextPath}/assets/images/buyinfo-s3.jpg" width="50" height="50" /></li>
-     <li><img src="${contextPath}/assets/images/buyinfo-s4.jpg" width="50" height="50" /></li>
-     <li><img src="${contextPath}/assets/images/buyinfo-s5.jpg" width="50" height="50" /></li>
+     <li><img src="${contextPath}/pro-picture/${commodity.picturePath}" width="50" height="50" /></li>
+     <li><img src="${contextPath}/pro-picture/${commodity.picturePath}" width="50" height="50" /></li>
+     <li><img src="${contextPath}/pro-picture/${commodity.picturePath}" width="50" height="50" /></li>
+     <li><img src="${contextPath}/pro-picture/${commodity.picturePath}" width="50" height="50" /></li>
+     <li><img src="${contextPath}/pro-picture/${commodity.picturePath}" width="50" height="50" /></li>
     </ul><!--buyimgsmall/-->
    </div><!--buyDtlLeft/-->
    <div class="buyDtlRight">
-    <h3>联想 A808T 黄金斗士</h3>
-    <h4>【赠送精品蓝牙耳机+超大容量移动电源】5.0英寸高清大屏 真八核1.7GHz 1300万像素主摄像头</h4>
-    <h5>价格：<span>￥</span><strong id="price_item_1">1999.00</strong></h5>
+    <h3>${commodity.title}</h3>
+    <h4>${commodity.introduce}</h4>
+    <h5>价格：<span>￥</span><strong id="price_item_1">${commodity.price}</strong></h5>
     <table class="buyTable">
      <tr>
       <th width="70">商品编号</th>
@@ -124,7 +125,7 @@
      </tr>
      <tr>
       <th width="70">手机库存</th>
-      <td>有货</td>
+      <td>${commodity.stock}</td>
      </tr>
      <tr>
       <th width="70">购买数量</th>
@@ -151,6 +152,7 @@
     </div><!--goumai/-->
    </div><!--buyDtlRight/-->
    <div class="clears"></div>
+ 
   </div><!--buyDtl/-->
   <div class="buyDtl2">
    <ul class="buydel2Eq">

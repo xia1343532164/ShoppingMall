@@ -10,7 +10,6 @@ import ShoppingMall.Dao.CommodityDao;
 import ShoppingMall.entity.Commodity;
 
 @Service
-@Transactional
 public class CommodityServiceImpl implements CommodityService {
 
 	@Autowired
@@ -21,4 +20,8 @@ public class CommodityServiceImpl implements CommodityService {
 		return commodityDao.findAll();
 	}
 
+	@Override
+	public Commodity findOne(Integer id) {
+		return commodityDao.findOne(id);
+	}
 }

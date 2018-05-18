@@ -8,4 +8,6 @@ public interface CommodityDao {
 
 	List<Commodity> findAll();
 
+	Commodity findOne(Integer id);
+
 }

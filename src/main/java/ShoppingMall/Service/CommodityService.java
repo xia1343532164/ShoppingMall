@@ -8,4 +8,6 @@ public interface CommodityService {
 
 	List<Commodity> findAll();
 
+	Commodity findOne(Integer id);
+
 }

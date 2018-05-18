@@ -483,7 +483,7 @@
   <div class="phoneBox">'
 <c:forEach items="${commodity }" var="commodity">
  <dl>
-    <dt><a href="${contextPath}/buyinfo"><img src="${contextPath}/pro-picture/${commodity.picturePath}" /></a></dt>
+    <dt><a href="${contextPath}/buyinfo/${commodity.id}"><img src="${contextPath}/pro-picture/${commodity.picturePath}" /></a></dt>
     <dd>
      <h3>￥${commodity.price}</h3>
      <div class="phonePars">
@@ -495,7 +495,7 @@
      </div><!--xiaoliang/-->
      <div class="jiaru-shoucang">
       <span class="jiaruCar">加入购物车</span>
-      <span class="shoucangCar"><a href="${contextPath}/assets/quanjing/index.jsp">选用此模型</a></span>>
+      <span class="shoucangCar"><a href="${contextPath}/assets/quanjing/index.jsp">选用此模型</a></span>
       <div class="clears"></div>
      </div><!--jiaru-shoucang/-->
     </dd>

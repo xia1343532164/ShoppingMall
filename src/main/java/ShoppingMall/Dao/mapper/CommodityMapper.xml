@@ -8,4 +8,8 @@
 	     select * from pro
   </select>
   
+  <select id="findOne" resultType="Commodity">
+	     select * from pro where id = #{id}
+  </select>
+  
 </mapper>
