@@ -38,4 +38,5 @@ public class GoodsController {
          model.addAttribute("commodity",commodity);
 		 return "buyinfo";
     }
+    
 }

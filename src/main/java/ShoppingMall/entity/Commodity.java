@@ -1,5 +1,7 @@
 package ShoppingMall.entity;
 
+import java.util.List;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class Commodity {
@@ -63,6 +65,6 @@ public class Commodity {
 	@Override
 	public String toString() {
 		return "Commodity [id=" + id + ", title=" + title + ", picturePath=" + picturePath + ", classify=" + classify
-				+ ", price=" + price + ", stock=" + stock + ", introduce=" + introduce + ", picture=" + picture + "]";
+				+ ", price=" + price + ", stock=" + stock + ", introduce=" + introduce + ", picture=" + picture;
 	}
 }

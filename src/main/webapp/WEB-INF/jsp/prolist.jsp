@@ -494,7 +494,7 @@
       <span class="pad">上海有货</span>
      </div><!--xiaoliang/-->
      <div class="jiaru-shoucang">
-      <span class="jiaruCar">加入购物车</span>
+      <span class="jiaruCar" >加入购物车</span>
       <span class="shoucangCar"><a href="${contextPath}/assets/quanjing/index.jsp">选用此模型</a></span>
       <div class="clears"></div>
      </div><!--jiaru-shoucang/-->
