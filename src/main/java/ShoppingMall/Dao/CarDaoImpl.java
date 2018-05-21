@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import ShoppingMall.Dao.mapper.CarMapper;
 import ShoppingMall.entity.Car;
+import ShoppingMall.entity.VipAddress;
 
 @Repository
 public class CarDaoImpl implements CarDao {
@@ -28,5 +29,4 @@ public class CarDaoImpl implements CarDao {
 	public void delCar(int id) {
              carMapper.delCar(id);		
 	}
-
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import ShoppingMall.entity.Car;
+import ShoppingMall.entity.VipAddress;
 
 public interface CarMapper {
 
@@ -13,4 +14,6 @@ public interface CarMapper {
 	List<Car> findAll(Integer id);
 
 	void delCar(int id);
+
+	List<VipAddress> findAddress(Integer id);
 }

@@ -3,6 +3,7 @@ package ShoppingMall.Service;
 import java.util.List;
 
 import ShoppingMall.entity.Car;
+import ShoppingMall.entity.VipAddress;
 
 public interface CarService {
 	
@@ -11,4 +12,5 @@ public interface CarService {
 	List<Car> findAll(Integer id);
 
 	void delCar(int id);
+
 }

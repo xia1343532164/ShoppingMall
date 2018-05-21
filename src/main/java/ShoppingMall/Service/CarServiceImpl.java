@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import ShoppingMall.Dao.CarDao;
 import ShoppingMall.entity.Car;
+import ShoppingMall.entity.VipAddress;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -28,4 +29,5 @@ public class CarServiceImpl implements CarService {
 	public void delCar(int id) {
         carDao.delCar(id);		
 	}
+
 }

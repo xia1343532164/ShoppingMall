@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
+
+<c:set var="countMoney" value="0"></c:set>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -73,17 +76,19 @@
    <div class="carImg"><img src="${contextPath}/assets/images/car1.jpg" width="951" height="27" /></div>
    <h4 class="orderTitle">收货地址</h4>
    <table class="ord">
+   <c:forEach items="${address}" var="location">
     <tr>
      <td width="30%">
-      <input type="radio" /> 张大炮
+      <input type="radio" />  ${location.addressee} 
      </td>
      <td width="50%">
-      上海,上海市,普陀区,曹杨路1040弄中友大厦一号楼19楼	,200000,13020129519
+    ${location.zone},${location.address},${location.code},${location.mobilephone}
      </td>
      <td>
       <span class="green upd">[修改]</span> | <span class="green add">[添加]</span> 
      </td>
     </tr>
+    </c:forEach>
    </table><!--ord/-->
    <div class="address">
     <div class="addList">
@@ -156,16 +161,16 @@
      <td><strong class="red">￥${car.commoditys.price * car.goodscount}</strong></td>
      <td><a href="#" class="green">收藏</a><br /><a href="${contextPath}/del/${car.id}" class="green">删除</a></td>
     </tr>
+    <c:set var="countMoney" value="${countMoney+ car.commoditys.price * car.goodscount}"></c:set>
     <tr>
     </c:forEach>
-
     <tr>
      <td colspan="6"><div class="shanchu"><img src="${contextPath}/assets/images/lajio.jpg" /> 全部删除</div></td>
     </tr>
    </table><!--orderList/-->
    <div class="zongji">
     <strong>所需运费：</strong>￥0.00 &nbsp;&nbsp;
-    <strong>总计(不含运费)：</strong><strong class="red">￥70.42</strong>
+    <strong>总计(不含运费)：</strong><strong class="red">￥${countMoney}</strong>
    </div><!--zongji/-->
    <div class="jiesuan">
     <a href="index.html" class="jie_1">继续购物&gt;&gt;</a>

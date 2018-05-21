@@ -84,7 +84,6 @@ public class VipController {
 		}
 		return "vipPwd";
 	}
-	//地址添加
 	@RequestMapping(method=RequestMethod.GET,value="/vipAddress")
 	public String vipAddress(@AuthenticationPrincipal(expression="user")User user ,Model model){
 		 List<VipAddress> vipAddress = vipService.findAll(user.getId());
@@ -92,6 +91,7 @@ public class VipController {
 		return "vipAddress";
 }
 	
+	//地址添加
 	@RequestMapping(method=RequestMethod.POST,value="/vipAddress")
    public String AddressAdd(@AuthenticationPrincipal(expression="user")User user, @ModelAttribute VipAddress address){
 		address.setUser_id(user.getId());

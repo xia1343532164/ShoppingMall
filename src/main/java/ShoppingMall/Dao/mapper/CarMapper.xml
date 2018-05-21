@@ -27,4 +27,5 @@
   <delete id="delCar">
          delete from shoppingcar where id = #{id}
   </delete>
+  
 </mapper>
