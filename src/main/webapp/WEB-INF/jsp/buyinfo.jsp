@@ -11,6 +11,7 @@
 <script type="text/javascript" src="${contextPath}/assets/js/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="${contextPath}/assets/js/js.js"></script>
 <script type="text/javascript" src="${contextPath}/assets/js/payfor.js"></script>
+<script type="text/javascript" src="${contextPath}/assets/js/myjs.js"></script>
 </head>
 
 <body>
@@ -148,7 +149,7 @@
     </table><!--buyTable/-->
     <div class="goumai">
      <a href="${contextPath}/addCar/${commodity.id}" class="buy-gou">立即购买</a>
-     <a href="${contextPath}/addCar/${commodity.id}" class="buy-mai">加入购物车</a>
+     <a class="buy-mai" name="${commodity.id}">加入购物车</a>
     </div><!--goumai/-->
    </div><!--buyDtlRight/-->
    <div class="clears"></div>

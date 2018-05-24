@@ -1,7 +1,5 @@
 package ShoppingMall.entity;
 
-import java.util.List;
-
 import org.springframework.web.multipart.MultipartFile;
 
 public class Commodity {

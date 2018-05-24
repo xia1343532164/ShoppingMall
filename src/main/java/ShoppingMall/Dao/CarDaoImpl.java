@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import ShoppingMall.Dao.mapper.CarMapper;
 import ShoppingMall.entity.Car;
-import ShoppingMall.entity.VipAddress;
 
 @Repository
 public class CarDaoImpl implements CarDao {
@@ -16,7 +15,7 @@ public class CarDaoImpl implements CarDao {
 	private CarMapper carMapper;
 	
 	@Override
-	public void addCar(Integer userId, int id) {
+	public void addCar(Integer userId, Integer id) {
            carMapper.addCar(userId,id);
 	}
 
@@ -26,7 +25,38 @@ public class CarDaoImpl implements CarDao {
 	}
 
 	@Override
-	public void delCar(int id) {
-             carMapper.delCar(id);		
+	public void minusConut(Integer id) {
+            carMapper.minusCount(id);		
 	}
+
+	@Override
+	public void addCount(Integer userId, Integer id) {
+             carMapper.addCount(userId,id);		
+	}
+
+	@Override
+	public Car findOneCar(Integer id) {
+		return carMapper.findOneCar(id);
+	}
+
+	@Override
+	public void delAll(Integer id) {
+           carMapper.delAll(id);		
+	}
+
+	@Override
+	public void delCar(Integer carid) {
+           carMapper.delCar(carid);		
+	}
+
+	@Override
+	public Car checkCar(Integer userId, Integer id) {
+		return carMapper.checkCar(userId,id);
+	}
+
+	@Override
+	public void addCarCount(Integer carid) {
+            carMapper.addCarCount(carid);		
+	}
+
 }

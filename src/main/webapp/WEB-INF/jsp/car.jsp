@@ -13,14 +13,13 @@
 <link type="text/css" href="${contextPath}/assets/css/css.css" rel="stylesheet" />
 <script type="text/javascript" src="${contextPath}/assets/js/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="${contextPath}/assets/js/js.js"></script>
-
+<script type="text/javascript" src="${contextPath}/assets/js/myjs.js"></script>
 </head>
 
 <body>
  <div class="hrader" id="header">
   <div class="top">
-   <a href="login.html" style="color:#C94E13;">请登录</a> 
-   <a href="reg.html">注册</a>
+   <%@include file="header.jspf" %>
    <ul class="topNav">
     <li><a href="order.html">我的订单 </a></li>
     <li class="gouwuche"><a href="car.html">购物车</a> <strong style="color:#C94E13;">3</strong></li>
@@ -79,7 +78,7 @@
    <c:forEach items="${address}" var="location">
     <tr>
      <td width="30%">
-      <input type="radio" />  ${location.addressee} 
+      <input type="radio" name="addres"/>  ${location.addressee} 
      </td>
      <td width="50%">
     ${location.zone},${location.address},${location.code},${location.mobilephone}
@@ -134,14 +133,14 @@
     </tr>
     
     <c:forEach items="${cars}" var="car">
-    <tr>
+    <tr class="car${car.id}" name="car">
      <td><input type="checkbox" /></td>
      <td colspan="5" style="text-align:left;color:#930; font-weight:bold;">
       <img src="images/dianpu.gif" width="20" height="15" style="position:relative;top:2px;" />
-      店铺：unique VIP店铺 上海分店
+                       店铺：unique VIP店铺 上海分店
      </td>
     </tr>
-    <tr>
+    <tr class="car${car.id}" name="car">
      <td><input type="checkbox" /></td>
      <td>
       <dl>
@@ -153,13 +152,18 @@
      <td><strong class="red">￥${car.commoditys.price}</strong></td>
      <td>
      <div class="jia_jian">
-      <img src="${contextPath}/assets/images/jian.jpg" width="21" height="25" class="jian" />
-      <input type="text" class="shuliang" value="1" />
-      <img src="${contextPath}/assets/images/jia.jpg" width="21" height="25" class="jia" />
+      <img src="${contextPath}/assets/images/jian.jpg" width="21" height="25" class="jian" name="${car.id}" />
+      <input type="text" class="shuliang" value="${car.goodscount}" name="${car.id}"/>
+      <img src="${contextPath}/assets/images/jia.jpg" width="21" height="25" class="jia" name="${car.id}"/>
      </div>
      </td>
-     <td><strong class="red">￥${car.commoditys.price * car.goodscount}</strong></td>
-     <td><a href="#" class="green">收藏</a><br /><a href="${contextPath}/del/${car.id}" class="green">删除</a></td>
+     <td><strong class="red" name="${car.id}">￥${car.commoditys.price * car.goodscount}</strong></td>
+     
+     <td>
+     <a href="#" class="green" >收藏</a>
+     <br />
+     <a href="#" class="green" name="${car.id}">删除</a></td>
+    
     </tr>
     <c:set var="countMoney" value="${countMoney+ car.commoditys.price * car.goodscount}"></c:set>
     <tr>
@@ -167,13 +171,14 @@
     <tr>
      <td colspan="6"><div class="shanchu"><img src="${contextPath}/assets/images/lajio.jpg" /> 全部删除</div></td>
     </tr>
+    
    </table><!--orderList/-->
    <div class="zongji">
     <strong>所需运费：</strong>￥0.00 &nbsp;&nbsp;
-    <strong>总计(不含运费)：</strong><strong class="red">￥${countMoney}</strong>
+    <strong>总计(不含运费)：</strong><strong class="red" name="all">￥${countMoney}</strong>
    </div><!--zongji/-->
    <div class="jiesuan">
-    <a href="index.html" class="jie_1">继续购物&gt;&gt;</a>
+    <a href="${contextPath}/index" class="jie_1">继续购物&gt;&gt;</a>
     <a href="order.html" class="jie_2">立即结算&gt;&gt;</a>
     <div class="clears"></div>
    </div><!--jiesuan/-->

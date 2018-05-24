@@ -10,6 +10,7 @@ import ShoppingMall.Dao.CommodityDao;
 import ShoppingMall.entity.Commodity;
 
 @Service
+@Transactional
 public class CommodityServiceImpl implements CommodityService {
 
 	@Autowired

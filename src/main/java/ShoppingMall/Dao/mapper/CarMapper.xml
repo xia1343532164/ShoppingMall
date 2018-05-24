@@ -13,9 +13,46 @@
        select p.id pro_id ,p.title pro_title,p.price pro_price,c.id car_id,c.goodscount car_goodscount 
        from pro p inner join shoppingcar c on c.pro_id=p.id where user_id=#{id}
   </select>
-   
-  <resultMap type="Car" id="cardetailsMap">
+  
+  <delete id="delCar">
+         delete from shoppingcar where id = #{carid}
+  </delete>
+  
+  <update id="minusCount">
+          update shoppingcar set goodsCount = goodscount-1 
+          where id = #{id}
+  </update>
+  
+  <update id="addCount">
+            update shoppingcar set goodsCount = goodsCount+1
+            where user_id=#{userId} and pro_id = #{id} 
+  </update>
+  
+    <update id="addCarCount">
+            update shoppingcar set goodsCount = goodsCount+1
+            where id = #{carid} 
+   </update>
+  
+  <select id="findOneCar" resultMap="cardetailsMap">
+          select p.id pro_id ,p.title pro_title,p.price pro_price,
+        c.id car_id,  c.user_id car_userid, c.goodscount car_goodscount 
+       from shoppingcar c inner join pro p  on c.pro_id=p.id where c.id=#{id} 
+  </select>
+  
+  <select id="checkCar" resultMap="cardetailsMap">
+        select p.id pro_id ,p.title pro_title,p.price pro_price,
+        c.id car_id,  c.user_id car_userid, c.goodscount car_goodscount 
+        from shoppingcar c inner join pro p  on c.pro_id=p.id 
+        where c.user_id=#{userId} and c.pro_id = #{id} 
+   </select>
+  
+  <delete id="delAll">
+        delete from shoppingcar where user_id=#{id}
+  </delete>
+  
+    <resultMap type="Car" id="cardetailsMap">
      <id property="id" column="car_id"/>
+     <result property="userId" column="car_userid"/>
      <result property="goodscount" column="car_goodscount"/>
      <association property="commoditys" javaType="Commodity">
          <id property="id" column="pro_id"/>
@@ -23,9 +60,4 @@
           <result property="price" column="pro_price"/>
      </association>
   </resultMap>
-  
-  <delete id="delCar">
-         delete from shoppingcar where id = #{id}
-  </delete>
-  
 </mapper>
