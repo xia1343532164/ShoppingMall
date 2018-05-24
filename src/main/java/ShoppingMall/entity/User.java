@@ -40,6 +40,7 @@ public class User {
 	private String picturePath;
 	
 	private List<VipAddress> vipAddress; 
+	
 				   
 	
 	public Integer getId() {

@@ -70,6 +70,8 @@
    <div class="clears"></div>
   </ul><!--nav/-->
  </div><!--navBox/-->
+ <form action="${contextPath}/success" method="post">
+ <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
  <div class="car">
   <div class="cont">
    <div class="carImg"><img src="${contextPath}/assets/images/car1.jpg" width="951" height="27" /></div>
@@ -78,7 +80,7 @@
    <c:forEach items="${address}" var="location">
     <tr>
      <td width="30%">
-      <input type="radio" name="addres"/>  ${location.addressee} 
+      <input type="radio" name="addressId" value="${location.id}"/>  ${location.addressee} 
      </td>
      <td width="50%">
     ${location.zone},${location.address},${location.code},${location.mobilephone}
@@ -141,7 +143,7 @@
      </td>
     </tr>
     <tr class="car${car.id}" name="car">
-     <td><input type="checkbox" /></td>
+     <td><input type="checkbox"  value="${car.commoditys.id}" name="proId"/></td>
      <td>
       <dl>
        <dt><a href="proinfo.html"><img src="${contextPath}/assets/images/phone.png" width="85" height="85" /></a></dt>
@@ -179,12 +181,14 @@
    </div><!--zongji/-->
    <div class="jiesuan">
     <a href="${contextPath}/index" class="jie_1">继续购物&gt;&gt;</a>
-    <a href="order.html" class="jie_2">立即结算&gt;&gt;</a>
+    <input type="submit" value="立即结算&gt;&gt;" class="jie_2" />
+   <%--  <a href="${contextPath}/success" class="jie_2">立即结算&gt;&gt;</a> --%>
     <div class="clears"></div>
    </div><!--jiesuan/-->
    <div class="clears"></div>
   </div><!--cont/-->
  </div><!--car/-->
+ </form>
  <div class="footBox">
   <div class="footers">
    <div class="footersLeft">
