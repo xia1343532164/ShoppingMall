@@ -63,14 +63,14 @@
    <li><a href="index.html">首页</a></li>
    <li><a href="buy.html">买家</a></li>
    <li><a href="sell.html">卖家</a></li>
-   <li><a href="vip.html">会员中心</a></li>
+   <li><a href="${contextPath}/vipinfo">会员中心</a></li>
    <li><a href="xuanshang.html">悬赏榜</a></li>
    <li><a href="luntan.html" class="luntan">论坛</a></li>
    <li class="navCur"><a href="help.html">帮助</a></li>
    <div class="clears"></div>
   </ul><!--nav/-->
  </div><!--navBox/-->
- <form action="${contextPath}/success" method="post">
+ <form action="${contextPath}/alipay/order" method="post">
  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
  <div class="car">
   <div class="cont">
@@ -126,8 +126,8 @@
    </div><!--address/-->
    <table class="orderList">
     <tr>
-     <th width="20"></th>
-     <th width="450">商品</th>
+     <th width="20"> <input type="checkbox" name="checkall" onclick="checkAll(checkall)"/></th>
+     <th width="450">商品 </th>
      <th width="130">单价</th>
      <th width="130">数量</th>
      <th width="130">总金额</th>
@@ -136,7 +136,7 @@
     
     <c:forEach items="${cars}" var="car">
     <tr class="car${car.id}" name="car">
-     <td><input type="checkbox" /></td>
+    
      <td colspan="5" style="text-align:left;color:#930; font-weight:bold;">
       <img src="images/dianpu.gif" width="20" height="15" style="position:relative;top:2px;" />
                        店铺：unique VIP店铺 上海分店
@@ -252,5 +252,24 @@
   <br />
   <span>&copy; 2014 Unqezi 使用前必读 沪ICP备 12007626号-1</span>
  </div><!--footer/-->
+ <script type="text/javascript">  
+         function checkAll(checkall) {    
+             arr = document.getElementsByName('proId');   
+             if (checkall.checked == true) {   
+                 for(i=0;i<arr.length;i++){   
+                       
+                     arr[i].checked = true;   
+                 }  
+   
+                 }else{  
+                     for(i=0;i<arr.length;i++){   
+                         if((arr[i]).checked==false){  
+                             arr[i].checked = true;  
+                        }else  
+                         {arr[i].checked = false; }  
+                     }  
+                 }  
+     }    
+  </script>
 </body>
 </html>

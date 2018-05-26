@@ -12,10 +12,13 @@ public class Order {
 	private Date ordertime;
 	private int paymentMethod;
 	private int procount;
+	private Long ordernumber;
 	
 	private User user;
-	private VipAddress vipAddress;
+	
 	private Commodity commodity;
+	
+	private VipAddress vipAddress;
 	public Integer getId() {
 		return id;
 	}
@@ -65,17 +68,18 @@ public class Order {
 		this.procount = procount;
 	}
 	
+	
+	public Long getOrdernumber() {
+		return ordernumber;
+	}
+	public void setOrdernumber(Long ordernumber) {
+		this.ordernumber = ordernumber;
+	}
 	public User getUser() {
 		return user;
 	}
 	public void setUser(User user) {
 		this.user = user;
-	}
-	public VipAddress getVipAddress() {
-		return vipAddress;
-	}
-	public void setVipAddress(VipAddress vipAddress) {
-		this.vipAddress = vipAddress;
 	}
 	public Commodity getCommodity() {
 		return commodity;
@@ -83,11 +87,18 @@ public class Order {
 	public void setCommodity(Commodity commodity) {
 		this.commodity = commodity;
 	}
+	public VipAddress getVipAddress() {
+		return vipAddress;
+	}
+	public void setVipAddress(VipAddress vipAddress) {
+		this.vipAddress = vipAddress;
+	}
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", userId=" + userId + ", addressId=" + addressId + ", proId=" + proId + ", status="
 				+ status + ", ordertime=" + ordertime + ", paymentMethod=" + paymentMethod + ", procount=" + procount
-				+ ", user=" + user + ", vipAddress=" + vipAddress + ", commodity=" + commodity + "]";
+				+ ", ordernumber=" + ordernumber + ", user=" + user + ", commodity=" + commodity + ", vipAddress="
+				+ vipAddress + "]";
 	}
-	
+
 }

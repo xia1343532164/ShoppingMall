@@ -1,4 +1,4 @@
-package ShoppingMall.Service;
+package ShoppingMall.Service.impl;
 
 import java.util.Arrays;
 
@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ShoppingMall.Dao.UserDao;
+import ShoppingMall.Service.UserService;
 import ShoppingMall.entity.User;
 
 @Service

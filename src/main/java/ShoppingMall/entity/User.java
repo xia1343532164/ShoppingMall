@@ -39,9 +39,8 @@ public class User {
 	private MultipartFile picture;
 	private String picturePath;
 	
-	private List<VipAddress> vipAddress; 
+	private List<VipAddress> vipAddress;
 	
-				   
 	
 	public Integer getId() {
 		return id;
@@ -138,11 +137,12 @@ public class User {
 	public void setVipAddress(List<VipAddress> vipAddress) {
 		this.vipAddress = vipAddress;
 	}
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", phone=" + phone + ", role="
 				+ role + ", email=" + email + ", realname=" + realname + ", city=" + city + ", sex=" + sex + ", idcard="
-				+ idcard + ", category=" + category + ", sysopsis=" + sysopsis + ", picturePath=" + picturePath
-				+ ", vipAddress=" + vipAddress + "]";
+				+ idcard + ", category=" + category + ", sysopsis=" + sysopsis + ", picturePath=" + picturePath + ", vipAddress=" + vipAddress + "]";
 	}
+	
 }

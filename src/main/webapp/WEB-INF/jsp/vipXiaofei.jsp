@@ -1,21 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	<c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>unique</title>
-<link type="text/css" href="css/css.css" rel="stylesheet" />
-<script type="text/javascript" src="js/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
+<link type="text/css" href="${contextPath}/assets/css/css.css" rel="stylesheet" />
+<script type="text/javascript" src="${contextPath}/assets/js/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="${contextPath}/assets/js/js.js"></script>
 
 </head>
 
 <body>
  <div class="hrader" id="header">
   <div class="top">
-   <a href="login.html" style="color:#C94E13;">请登录</a> 
-   <a href="reg.html">注册</a>
+  <%@include file="header.jspf" %>
    <ul class="topNav">
     <li><a href="order.html">我的订单 </a></li>
     <li class="gouwuche"><a href="car.html">购物车</a> <strong style="color:#C94E13;">3</strong></li>
@@ -29,12 +32,12 @@
  </div><!--hrader/-->
  <div class="mid">
   <h1 class="logo" style="text-align:left;">
-  <a href="index.html"><img src="images/logo.png" width="304" height="74" /></a>
+  <a href="index.html"><img src="${contextPath}/assets/images/logo.png" width="304" height="74" /></a>
   </h1>
   <form action="#" method="get" class="subBox">
    <div class="subBox2">
     <input type="text" class="subText" />
-    <input type="image" src="images/sub.jpg" width="95" height="32" class="subImg" />
+    <input type="image" src="${contextPath}/assets/images/sub.jpg" width="95" height="32" class="subImg" />
     <div class="hotci">
     <a href="#">酷派大神</a>
     <a href="#">三星s5</a>
@@ -46,10 +49,10 @@
   </form><!--subBox/-->
   <div class="ding-gou">
    <div class="ding">
-    <a href="order.html"><img src="images/dingdan.jpg" width="106" height="32" /></a>
+    <a href="order.html"><img src="${contextPath}/assets/images/dingdan.jpg" width="106" height="32" /></a>
    </div><!--ding/-->
    <div class="gou">
-    <a href="car.html"><img src="images/gouwuche.jpg" width="126" height="32" /></a>
+    <a href="car.html"><img src="${contextPath}/assets/images/gouwuche.jpg" width="126" height="32" /></a>
    </div><!--gou/-->
    <div class="clears"></div>
   </div><!--ding-gou/-->
@@ -68,7 +71,7 @@
  </div><!--navBox/-->
  <div class="vipBox">
   <div class="vipLeft">
-   <h2 class="headImg"><img src="images/vipImg.jpg" width="183" height="169" /></h2>
+   <h2 class="headImg"><img src="${contextPath}/assets/images/vipImg.jpg" width="183" height="169" /></h2>
    <h3 class="vipName">测试webqin</h3>
    <dl class="vipNav">
     <dt class="vip_1 vipCur">买家中心</dt>
@@ -91,20 +94,21 @@
    <table class="orderDeatils">
     <tr>
      <th>订单编号</th>
-     <td>465489132154416</td>
+     <td>${order.ordernumber}</td>
     </tr>
     <tr>
      <th>商品名称</th>
-     <td>妙捷 一次性纸杯</td>
+     <td>${order.commodity.title}</td>
     </tr>
     <tr>
      <th>订单价钱</th>
-     <td>￥185.80</td>
+     <td>￥${order.commodity.price}</td>
     </tr>
     <tr>
      <th>订单信息</th>
      <td> 
-张益达，13572607270，， 陕西省 汉中市 勉县 勉县东方眼科医院，724200</td>
+${order.vipAddress.addressee},${order.vipAddress.mobilephone},${order.vipAddress.zone},${order.vipAddress.address},${order.vipAddress.code}
+</td>
     </tr>
     <tr>
      <th>商家</th>
@@ -112,11 +116,11 @@
     </tr>
     <tr>
      <th>支付方式</th>
-     <td>支付宝支付</td>
+     <td>${order.paymentMethod==0 ? "支付宝支付":"其他方式"}</td>
     </tr>
     <tr>
      <th>支付状态</th>
-     <td>成功</td>
+     <td>${order.status==0 ? "未付款":"成功"}</td>
     </tr>
    </table> 
   </div><!--vipRight/-->
@@ -125,7 +129,7 @@
  <div class="footBox">
   <div class="footers">
    <div class="footersLeft">
-    <a href="index.html"><img src="images/ftlogo.jpg" width="240" height="64" /></a>
+    <a href="index.html"><img src="${contextPath}/assets/images/ftlogo.jpg" width="240" height="64" /></a>
     <h3 class="ftphone">400 000 0000 </h3>
     <div class="ftKe">
      客服 7x24小时(全年无休)<br />

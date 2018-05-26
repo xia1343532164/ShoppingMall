@@ -1,4 +1,4 @@
-package ShoppingMall.Service;
+package ShoppingMall.Service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ShoppingMall.Dao.OrderDao;
+import ShoppingMall.Service.OrderService;
+import ShoppingMall.entity.Order;
 
 @Service
 @Transactional
@@ -16,9 +18,9 @@ public class OrderServiceImpl implements OrderService {
 	private OrderDao orderDao;
 
 	@Override
-	public void createOrder(Integer userId, Integer addressId, List<Integer> proId) {
+	public void createOrder(Integer userId, Integer addressId, List<Integer> proId,Long ordernumber) {
       for (Integer proIds : proId) {
-    	  orderDao.createOrder(userId,addressId,proIds);
+    	  orderDao.createOrder(userId,addressId,proIds, ordernumber);
 	}
 	}
 
@@ -29,4 +31,13 @@ public class OrderServiceImpl implements OrderService {
 		}		
 	}
 
+	@Override
+	public List<Order> findOrder(Integer userid) {
+		return orderDao.findOrder(userid);
+	}
+
+	@Override
+	public Order findOrderdetails(int orderid) {
+		return orderDao.findOrderdetails(orderid);
+	}
 }

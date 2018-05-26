@@ -1,65 +1,63 @@
-package ShoppingMall.Service;
+package ShoppingMall.Dao.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Repository;
 
 import ShoppingMall.Dao.CarDao;
+import ShoppingMall.Dao.mapper.CarMapper;
 import ShoppingMall.entity.Car;
 
-@Service
-@Transactional
-public class CarServiceImpl implements CarService {
+@Repository
+public class CarDaoImpl implements CarDao {
 
 	@Autowired
-	private CarDao carDao;
+	private CarMapper carMapper;
 	
 	@Override
 	public void addCar(Integer userId, Integer id) {
-           carDao.addCar(userId,id);	
+           carMapper.addCar(userId,id);
 	}
 
 	@Override
 	public List<Car> findAll(Integer id) {
-		return carDao.findAll(id);
+		return carMapper.findAll(id);
 	}
 
 	@Override
-	public void minusCount(Integer id) {
-         carDao.minusConut(id);		
+	public void minusConut(Integer id) {
+            carMapper.minusCount(id);		
 	}
 
 	@Override
 	public void addCount(Integer userId, Integer id) {
-            carDao.addCount( userId,  id);		
+             carMapper.addCount(userId,id);		
 	}
 
 	@Override
 	public Car findOneCar(Integer id) {
-		return carDao.findOneCar(id);
+		return carMapper.findOneCar(id);
 	}
 
 	@Override
 	public void delAll(Integer id) {
-          carDao.delAll(id);		
+           carMapper.delAll(id);		
 	}
 
 	@Override
 	public void delCar(Integer carid) {
-        carDao.delCar(carid);		
+           carMapper.delCar(carid);		
 	}
 
 	@Override
 	public Car checkCar(Integer userId, Integer id) {
-		return carDao.checkCar(userId,id);
+		return carMapper.checkCar(userId,id);
 	}
 
 	@Override
 	public void addCarCount(Integer carid) {
-            carDao.addCarCount(carid);		
+            carMapper.addCarCount(carid);		
 	}
-
 
 }

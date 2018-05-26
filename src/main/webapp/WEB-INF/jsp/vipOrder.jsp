@@ -2,11 +2,13 @@
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 	<c:set var="contextPath" value="${pageContext.request.contextPath}"></c:set>
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>unique</title>
 <link type="text/css" href="${contextPath}/assets/css/css.css" rel="stylesheet" />
 <script type="text/javascript" src="${contextPath}/assets/js/js/jquery-1.9.1.min.js"></script>
@@ -17,8 +19,7 @@
 <body>
  <div class="hrader" id="header">
   <div class="top">
-   <a href="login.jsp" style="color:#C94E13;">请登录</a> 
-   <a href="reg.jsp">注册</a>
+     <%@include file="header.jspf" %>
    <ul class="topNav">
     <li><a href="order.jsp">我的订单 </a></li>
     <li class="gouwuche"><a href="car.jsp">购物车</a> <strong style="color:#C94E13;">3</strong></li>
@@ -96,46 +97,17 @@
     <span>待收货 <span class="red">15</span></span> 
     </h2>
     <table class="vipOrder">
-     <%-- <tr>
-      <td><a href="proinfo.jsp"><img src="${contextPath}/assets/images/phone.png" width="60" height="55"></a></td>
-      <td>张益达</td>
-      <td>￥16.9<br />支付宝支付</td>
-      <td>2014年6月23日11:32:17</td>
-      <td><a href="success.jsp"><strong>等待付款</strong></a></td>
-      <td><a href="vipXiaofei.jsp">查看</a></td>
-     </tr>
+    <c:forEach items="${order}" var="orders">
+    
      <tr>
       <td><a href="proinfo.jsp"><img src="${contextPath}/assets/images/phone.png" width="60" height="55"></a></td>
-      <td>张益达</td>
-      <td>￥16.9<br />支付宝支付</td>
-      <td>2014年6月23日11:32:17</td>
-      <td><a href="success.jsp"><strong>等待付款</strong></a></td>
-      <td><a href="vipXiaofei.jsp">查看</a></td>
+      <td>${orders.user.username}</td>
+      <td>￥${orders.commodity.price}<br />${orders.paymentMethod ==0 ? "支付宝支付":"其他方式"}</td>
+      <td> <fmt:formatDate value="${orders.ordertime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+      <td><a href="success.jsp"><strong>${orders.status==0 ? "等待付款":"支付成功"}</strong></a></td>
+      <td><a href="${contextPath}/vipXiaofei/${orders.id}">查看</a></td>
      </tr>
-     <tr>
-      <td><a href="proinfo.jsp"><img src="${contextPath}/assets/images/phone.png" width="60" height="55"></a></td>
-      <td>张益达</td>
-      <td>￥16.9<br />支付宝支付</td>
-      <td>2014年6月23日11:32:17</td>
-      <td><a href="success.jsp"><strong>等待付款</strong></a></td>
-      <td><a href="vipXiaofei.jsp">查看</a></td>
-     </tr>
-     <tr>
-      <td><a href="proinfo.jsp"><img src="${contextPath}/assets/images/phone.png" width="60" height="55"></a></td>
-      <td>张益达</td>
-      <td>￥16.9<br />支付宝支付</td>
-      <td>2014年6月23日11:32:17</td>
-      <td><a href="success.jsp"><strong>等待付款</strong></a></td>
-      <td><a href="vipXiaofei.jsp">查看</a></td>
-     </tr>
-     <tr>
-      <td><a href="proinfo.jsp"><img src="${contextPath}/assets/images/phone.png" width="60" height="55"></a></td>
-      <td>张益达</td>
-      <td>￥16.9<br />支付宝支付</td>
-      <td>2014年6月23日11:32:17</td>
-      <td><a href="success.jsp"><strong>等待付款</strong></a></td>
-      <td><a href="vipXiaofei.jsp">查看</a></td>
-     </tr> --%>
+     </c:forEach>
     </table><!--vipOrder/-->
   </div><!--vipRight/-->
   <div class="clears"></div>

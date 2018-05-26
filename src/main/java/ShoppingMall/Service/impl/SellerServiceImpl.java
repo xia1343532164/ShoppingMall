@@ -1,10 +1,11 @@
-package ShoppingMall.Service;
+package ShoppingMall.Service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ShoppingMall.Dao.SellerDao;
+import ShoppingMall.Service.SellerService;
 import ShoppingMall.entity.Commodity;
 
 @Service

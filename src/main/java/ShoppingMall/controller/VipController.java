@@ -44,7 +44,7 @@ public class VipController {
 	//user1是登录的,user是表单提交的
 	//@AuthenticationPrincipal(expression="") 获取当前登录的对象
 	public String vipinfosave(@AuthenticationPrincipal(expression="user") User user1,@Valid @ModelAttribute User user,
-			BindingResult bindingResult,RedirectAttributes redirectAttributes) throws Exception{// 表单bean封装
+			BindingResult bindingResult,RedirectAttributes redirectAttributes,Model model) throws Exception{// 表单bean封装
 	     	if(user.getPicture().getSize()==0||
 					!user.getPicture().getContentType().toLowerCase().startsWith("image/")){
 			      bindingResult.rejectValue("picture", "formError.pictureRequired", "请选择照片");	
@@ -60,6 +60,7 @@ public class VipController {
             user.getPicture().transferTo(new File(uploadDir,newFileName));
             user.setPicturePath(newFileName);
 			vipService.saveinfo(user);
+			model.addAttribute("panduan","aa" );
 			
 			// RedirectAttributes同时还可以作为Model用(addAttribute)，添加flash属性必须用addFlashAttribute
 			 redirectAttributes.addFlashAttribute("save");

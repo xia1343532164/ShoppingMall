@@ -5,12 +5,57 @@
   <mapper namespace="ShoppingMall.Dao.mapper.OrderMapper">
  
   <insert id="createOrder">
-         insert into shoppingorder(id,user_id,address_id,pro_id,paymentMethod,ordertime,status)
-         values(shoppingorder_seq.nextval,#{userId},#{addressId},#{proId},0,sysdate,0)
+         insert into shoppingorder(id,user_id,address_id,pro_id,paymentMethod,ordertime,status,ordernumber)
+         values(shoppingorder_seq.nextval,#{userId},#{addressId},#{proId},0,sysdate,0,#{ordernumber})
   </insert>
   
   <delete id="delCar">
              delete from shoppingcar where pro_id = #{proId}
   </delete>
    
+   <select id="findOrder" resultMap="OrderdetailsMap">
+	        select u.id user_id , u.username user_username,
+	         o.id order_id ,o.paymentmethod order_paymentmethod,o.ordertime order_ordertime,o.status order_status,
+	         p.id pro_id ,p.price pro_price
+	         from
+	         shoppingorder o  inner join shoppinguser u  on o.user_id = u.id
+                              inner join pro p on o.pro_id = p.id
+	                          where u.id = #{userid}
+    </select>
+    
+   <select id="findOrderdetails" resultMap="OrderdetailsMap">
+         select u.id user_id , u.username user_username,
+         o.id order_id ,o.paymentmethod order_paymentmethod,o.ordertime order_ordertime,o.status order_status ,o.ordernumber order_ordernumber,
+         p.id pro_id ,p.title pro_title,p.price pro_price,
+         v.id address_id ,v.addressee address_addressee ,v.mobilephone address_mobilephone ,v.zone address_zone ,v.address address_address,v.code address_code from 
+         shoppingorder o  inner join shoppinguser u  on o.user_id = u.id
+                          inner join pro p  on o.pro_id = p.id
+                          inner join vipaddress v on o.address_id = v.id 
+                          where o.id = #{orderid}
+    </select> 
+    
+    <resultMap type="Order" id="OrderdetailsMap">
+              <id property="id" column="order_id"/>
+              <result property="paymentMethod" column="order_paymentMethod"/>
+              <result property="ordertime" column="order_ordertime"/>
+              <result property="status" column="order_status"/>
+              <result property="ordernumber" column="order_ordernumber"/>
+              <association property="user" javaType="User" >
+                <id property="id" column="user_id"/>
+                <result property="username" column="user_username"/>
+              </association>
+              <association property="commodity" javaType="Commodity" >
+                     <id property="id" column="pro_id"/>
+                     <result property="title" column="pro_title"/>
+                     <result property="price" column="pro_price"/>
+             </association>
+             <association property="vipAddress" javaType="VipAddress">
+                     <id property="id" column="address_id"/>
+                     <result property="addressee" column="address_addressee"/>
+                     <result property="mobilephone" column="address_mobilephone"/>
+                     <result property="zone" column="address_zone"/>
+                     <result property="address" column="address_address"/>
+                     <result property="code" column="address_code"/> 
+             </association> 
+    </resultMap>
 </mapper>

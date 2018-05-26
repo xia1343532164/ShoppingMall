@@ -67,17 +67,20 @@
    <div class="clears"></div>
   </ul><!--nav/-->
  </div><!--navBox/-->
+ <form action="${contextPath}/alipay/pay" method="post">
  <div class="car">
   <div class="cont">
    <div class="chenggong">
     <h3>下单成功</h3>
     <div class="zhifu">
      您选择的支付方式是 <strong class="red">支付宝</strong><br />
-     <a href="https://www.alipay.com/" target="_blank"><img src="${contextPath}/assets/images/zhifu.png" width="133" height="41" /></a>
+     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    <button type="sumbit" ><img src="${contextPath}/assets/images/zhifu.png" width="133" height="41" /></button>
     </div><!--zhifu/-->
    </div><!--chenggong/-->
   </div><!--cont/-->
  </div><!--car/-->
+ </form>
  <div class="footBox">
   <div class="footers">
    <div class="footersLeft">

@@ -231,7 +231,7 @@
   <span>&copy; 2014 Unqezi 使用前必读 沪ICP备 12007626号-1</span>
  </div><!--footer/-->
  <script src="${contextPath}/assets/toastr/toastr.min.js"></script>
-   <c:if test="${user.sex != null}">
+   <c:if test="${panduan != null}">
     <script type="text/javascript">
      toastr.success( '修改成功');
     </script>

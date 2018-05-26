@@ -1,10 +1,18 @@
 package ShoppingMall.Dao;
 
+import java.util.List;
+
+import ShoppingMall.entity.Order;
+
 public interface OrderDao {
 
 
-	void createOrder(Integer userId, Integer addressId, Integer proIds);
+	void createOrder(Integer userId, Integer addressId, Integer proIds, Long ordernumber);
 
 	void delCar(Integer proIds);
+
+	List<Order> findOrder(Integer userid);
+
+	Order findOrderdetails(int orderid);
 
 }

@@ -1,4 +1,4 @@
-package ShoppingMall.Service;
+package ShoppingMall.Service.impl;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ShoppingMall.Dao.VipDao;
+import ShoppingMall.Service.VipService;
 import ShoppingMall.entity.User;
 import ShoppingMall.entity.VipAddress;
 

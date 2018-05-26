@@ -1,8 +1,9 @@
-package ShoppingMall.Dao;
+package ShoppingMall.Dao.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import ShoppingMall.Dao.SellerDao;
 import ShoppingMall.Dao.mapper.SellerMapper;
 import ShoppingMall.entity.Commodity;
 

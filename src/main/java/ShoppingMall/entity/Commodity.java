@@ -12,6 +12,7 @@ public class Commodity {
     private String stock;
     private String introduce;
     private MultipartFile picture;
+    
 	public Integer getId() {
 		return id;
 	}
@@ -60,9 +61,11 @@ public class Commodity {
 	public void setPicture(MultipartFile picture) {
 		this.picture = picture;
 	}
+
 	@Override
 	public String toString() {
 		return "Commodity [id=" + id + ", title=" + title + ", picturePath=" + picturePath + ", classify=" + classify
-				+ ", price=" + price + ", stock=" + stock + ", introduce=" + introduce + ", picture=" + picture;
+				+ ", price=" + price + ", stock=" + stock + ", introduce=" + introduce + ", picture=" + picture
+				+ "]";
 	}
 }

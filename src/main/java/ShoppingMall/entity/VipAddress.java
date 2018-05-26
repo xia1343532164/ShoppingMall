@@ -9,6 +9,7 @@ public class VipAddress {
 	private String addressee ;//收件人
 	private String mobilephone;//手机号码或固定电话
 	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -51,6 +52,8 @@ public class VipAddress {
 	public void setMobilephone(String mobilephone) {
 		this.mobilephone = mobilephone;
 	}
+	
+
 	@Override
 	public String toString() {
 		return "VipAddress [id=" + id + ", user_id=" + user_id + ", zone=" + zone + ", address=" + address + ", code="
