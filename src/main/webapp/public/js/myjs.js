@@ -93,4 +93,21 @@ $(function(){
 		});
 	});
 	
+	//表单必须选地址和商品才能提交
+	$('#Immediate-settlement').submit(function() {
+		if ($('input[name=addressId]:checked', this).val() && 
+				$('input[name=proId]:checked', this).val()) {
+			return true;
+		} else if ($('input[name=addressId]:checked', this).val()) {
+			alert('请选择要购买的商品');
+			return false;
+		} else if ($('input[name=proId]:checked', this).val()) {
+			alert('请选择收货地址');
+			return false;
+		} else {
+			alert('请选择收货地址和商品');
+			return false;
+		}
+	});
+	
 });

@@ -70,7 +70,7 @@
    <div class="clears"></div>
   </ul><!--nav/-->
  </div><!--navBox/-->
- <form action="${contextPath}/alipay/order" method="post">
+ <form action="${contextPath}/success" method="post" id="Immediate-settlement">
  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
  <div class="car">
   <div class="cont">
@@ -181,8 +181,7 @@
    </div><!--zongji/-->
    <div class="jiesuan">
     <a href="${contextPath}/index" class="jie_1">继续购物&gt;&gt;</a>
-    <input type="submit" value="立即结算&gt;&gt;" class="jie_2" />
-   <%--  <a href="${contextPath}/success" class="jie_2">立即结算&gt;&gt;</a> --%>
+    <input type="submit" value="立即结算&gt;&gt;" class="jie_2" id="Immediate-settlement"/>
     <div class="clears"></div>
    </div><!--jiesuan/-->
    <div class="clears"></div>

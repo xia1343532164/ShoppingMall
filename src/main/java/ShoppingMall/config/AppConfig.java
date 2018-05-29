@@ -33,7 +33,7 @@ import com.alipay.api.DefaultAlipayClient;
 @Configuration
 @ComponentScan(basePackages="ShoppingMall")
 @EnableWebMvc
-@PropertySource({"classpath:jdbc.properties","classpath:alipay.properties"})
+@PropertySource("classpath:jdbc.properties")
 @EnableTransactionManagement
 @MapperScan("ShoppingMall.Dao.mapper")
 public class AppConfig extends WebMvcConfigurerAdapter {
@@ -96,14 +96,16 @@ public class AppConfig extends WebMvcConfigurerAdapter {
      	
      //支付宝支付
      @Bean
-     public AlipayClient alipayClient(Environment env) throws IOException{
-    	 return new DefaultAlipayClient(
-    			       env.getProperty("alipay.gateway"),
-    			       env.getProperty("alipay.appId"),
-    			       FileUtils.readFileToString(new File(env.getProperty("alipay.appPrikey")), "UTF-8"),
-    			       "json","UTF-8",
-    			       FileUtils.readFileToString(new File(env.getProperty("alipay.alipayPubkey")), "UTF-8"),
-    			       "RSA2");
-     }   
+     	public AlipayClient alipayClient() throws IOException {
+     		// https://docs.open.alipay.com/270/105899/
+     		return new DefaultAlipayClient(
+     				"https://openapi.alipay.com/gateway.do",
+     				"2018052360246120",
+     				FileUtils.readFileToString(new File("D:/alipay/app-prikey.txt"), "UTF-8"),
+     				"json", "UTF-8",
+     			FileUtils.readFileToString(new File("D:/alipay/alipay-pubkey.txt"), "UTF-8"),
+     				"RSA2"
+     				);
+     	}
 }
 

@@ -39,7 +39,7 @@ public  class OrderController {
 	public String success(){
 		return "success";
 	}*/
-	@RequestMapping(method=RequestMethod.POST,value="/alipay/order")
+	@RequestMapping(method=RequestMethod.POST,value="/success")
 	public String addorder(@AuthenticationPrincipal(expression="user" )User user,@RequestParam Integer addressId,
 			@RequestParam List<Integer> proId){
 		System.err.println(user.getId()+","+addressId+","+proId);
