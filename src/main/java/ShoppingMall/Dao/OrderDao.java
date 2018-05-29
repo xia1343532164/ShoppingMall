@@ -7,7 +7,7 @@ import ShoppingMall.entity.Order;
 public interface OrderDao {
 
 
-	void createOrder(Integer userId, Integer addressId, Integer proIds, Long ordernumber);
+	void createOrder(Integer userId, Integer addressId, Integer proIds, Long ordernumber, int goodscount);
 
 	void delCar(Integer proIds);
 

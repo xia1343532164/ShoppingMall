@@ -16,11 +16,12 @@ public class OrderServiceImpl implements OrderService {
 	
 	@Autowired
 	private OrderDao orderDao;
+	
 
 	@Override
-	public void createOrder(Integer userId, Integer addressId, List<Integer> proId,Long ordernumber) {
+	public void createOrder(Integer userId, Integer addressId, List<Integer> proId,Long ordernumber,int goodscount) {
       for (Integer proIds : proId) {
-    	  orderDao.createOrder(userId,addressId,proIds, ordernumber);
+    	  orderDao.createOrder(userId,addressId,proIds, ordernumber,goodscount);
 	}
 	}
 

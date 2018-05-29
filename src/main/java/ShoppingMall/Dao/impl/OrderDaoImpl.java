@@ -16,8 +16,8 @@ public class OrderDaoImpl implements OrderDao {
 	private OrderMapper orderMapper;
 
 	@Override
-	public void createOrder(Integer userId, Integer addressId, Integer proIds,Long ordernumber) {
-		 orderMapper.createOrder(userId,addressId,proIds,ordernumber);				
+	public void createOrder(Integer userId, Integer addressId, Integer proIds,Long ordernumber,int goodscount) {
+		 orderMapper.createOrder(userId,addressId,proIds,ordernumber,goodscount);				
 	}
 
 	@Override
@@ -34,6 +34,5 @@ public class OrderDaoImpl implements OrderDao {
 	public Order findOrderdetails(int orderid) {
 		return orderMapper.findOrderdetails(orderid);
 	}
-
 
 }

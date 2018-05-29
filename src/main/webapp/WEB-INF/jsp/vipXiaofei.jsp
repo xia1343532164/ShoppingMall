@@ -101,8 +101,13 @@
      <td>${order.commodity.title}</td>
     </tr>
     <tr>
+    <tr>
+     <th>数量</th>
+     <td>${order.procount}</td>
+    </tr>
+    <tr>
      <th>订单价钱</th>
-     <td>￥${order.commodity.price}</td>
+     <td>￥${order.commodity.price*order.procount}</td>
     </tr>
     <tr>
      <th>订单信息</th>

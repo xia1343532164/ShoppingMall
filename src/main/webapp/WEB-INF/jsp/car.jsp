@@ -155,7 +155,7 @@
      <td>
      <div class="jia_jian">
       <img src="${contextPath}/assets/images/jian.jpg" width="21" height="25" class="jian" name="${car.id}" />
-      <input type="text" class="shuliang" value="${car.goodscount}" name="${car.id}"/>
+      <input type="text" class="shuliang" value="${car.goodscount}" name="goodscount" aa="${car.id}"/>
       <img src="${contextPath}/assets/images/jia.jpg" width="21" height="25" class="jia" name="${car.id}"/>
      </div>
      </td>

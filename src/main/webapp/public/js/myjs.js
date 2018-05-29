@@ -7,13 +7,13 @@ $(function(){
 	headers[header] = token;*/
 	$(".jian").click(function(){
 		var id1 = $(this).attr("name");
-		console.log($(".shuliang[name='"+id1+"']").val());
+		console.log($(".shuliang[aa='"+id1+"']").val());
 		$.ajax({			
 			url:"/ShoppingMall/minus",
 			type:"GET",
-			data:{id:id1,goodscount:$(".shuliang[name='"+id1+"']").val()},
+			data:{id:id1,goodscount:$(".shuliang[aa='"+id1+"']").val()},
 			success:function(carStr){
-				console.log($("strong.red[name='"+id1+"']")[0]);	
+				console.log($("strong.red[aa='"+id1+"']")[0]);	
 				if(!carStr){
 					$(".car"+id1).remove();
 				}else{
@@ -21,7 +21,7 @@ $(function(){
 //					console.log(parseInt(($("strong.red[name='"+id1+"']")[0].innerHTML).substr(1)));
 //					console.log($("."+id1+"").val());
 					
-					$(".shuliang[name='"+id1+"']").val(carStr.goodscount);
+					$(".shuliang[aa='"+id1+"']").val(carStr.goodscount);
 					$("strong.red[name='"+id1+"']")[0].innerHTML="￥"+(carStr.commoditys.price * carStr.goodscount);
 					$("strong.red[name='all']")[0].innerHTML="￥"+(parseInt(($("strong.red[name='all']")[0].innerHTML).substr(1))-carStr.commoditys.price);
 				}
@@ -37,12 +37,12 @@ $(function(){
 	    $.ajax({
 			url:"/ShoppingMall/adding",
 			type:"GET",
-			data:{id:id1,goodscount:$(".shuliang[name='"+id1+"']").val()},
+			data:{id:id1,goodscount:$(".shuliang[aa='"+id1+"']").val()},
 		success:function(carStr){
 			/*console.log(carStr);
 			console.log($(".shuliang[name='"+id1+"']"));
 			console.log($("strong.red[name='"+id1+"']")[0]);*/
-		$(".shuliang[name='"+id1+"']").val(carStr.goodscount);
+		$(".shuliang[aa='"+id1+"']").val(carStr.goodscount);
 		$("strong.red[name='"+id1+"']")[0].innerHTML="￥"+(carStr.commoditys.price * carStr.goodscount);
 		$("strong.red[name='all']")[0].innerHTML="￥"+(parseInt(($("strong.red[name='all']")[0].innerHTML).substr(1))+parseInt(carStr.commoditys.price));
 					}

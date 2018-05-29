@@ -41,10 +41,10 @@ public  class OrderController {
 	}*/
 	@RequestMapping(method=RequestMethod.POST,value="/success")
 	public String addorder(@AuthenticationPrincipal(expression="user" )User user,@RequestParam Integer addressId,
-			@RequestParam List<Integer> proId){
+			@RequestParam List<Integer> proId,@RequestParam int goodscount){
 		System.err.println(user.getId()+","+addressId+","+proId);
 		Long ordernumber = System.currentTimeMillis();
-		orderService.createOrder(user.getId(),addressId,proId,ordernumber);
+		orderService.createOrder(user.getId(),addressId,proId,ordernumber,goodscount);
 		orderService.delCar(proId);
 		return "success";
 	}
