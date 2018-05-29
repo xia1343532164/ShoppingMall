@@ -19,7 +19,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
           http.authorizeRequests()
           .antMatchers("/admin/**").access(" isFullyAuthenticated() and FuhasRloe('ADMIN')")
-          .antMatchers("/assets/**","/login","/register","/index","/prolist","/alipay/**").permitAll()
+          .antMatchers("/assets/**","/login","/register","/index","/prolist","/pro-picture/**").permitAll()
           .antMatchers("/**").authenticated()
           
           .and()
